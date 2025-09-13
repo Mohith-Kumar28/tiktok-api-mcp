@@ -517,8 +517,12 @@ function parseApiFile(filePath) {
       }
     };
     
-    // Add TikTok Shop API common required parameters to all operations
-    const commonParameters = getTikTokShopCommonParameters();
+    // Determine if this endpoint needs shop authentication parameters
+    const isAuthorizationEndpoint = apiPath.includes('/authorization/');
+    const isSellerEndpoint = apiPath.includes('/seller/') && !apiPath.includes('/affiliate_seller/');
+    
+    // Get common parameters based on endpoint type
+    const commonParameters = isAuthorizationEndpoint ? [] : getTikTokShopCommonParameters();
     
     // Create parameter map for deduplication
     const parameterMap = new Map();
@@ -537,22 +541,24 @@ function parseApiFile(filePath) {
       parameterMap.set(baseKey, param);
     });
     
-    // Add common parameters (avoiding duplicates and updating existing ones)
-    commonParameters.forEach(commonParam => {
-      const baseName = getBaseParameterName(commonParam.name);
-      const baseKey = `${baseName}_${commonParam.in}`;
-      if (parameterMap.has(baseKey)) {
-        const existing = parameterMap.get(baseKey);
-        // Update existing parameter to be required and add description if missing
-        existing.required = true;
-        if (!existing.description && commonParam.description) {
-          existing.description = commonParam.description;
+    // Add common parameters only for non-authorization endpoints (avoiding duplicates and updating existing ones)
+    if (!isAuthorizationEndpoint) {
+      commonParameters.forEach(commonParam => {
+        const baseName = getBaseParameterName(commonParam.name);
+        const baseKey = `${baseName}_${commonParam.in}`;
+        if (parameterMap.has(baseKey)) {
+          const existing = parameterMap.get(baseKey);
+          // Update existing parameter to be required and add description if missing
+          existing.required = true;
+          if (!existing.description && commonParam.description) {
+            existing.description = commonParam.description;
+          }
+          parameterMap.set(baseKey, existing);
+        } else {
+          parameterMap.set(baseKey, commonParam);
         }
-        parameterMap.set(baseKey, existing);
-      } else {
-        parameterMap.set(baseKey, commonParam);
-      }
-    });
+      });
+    }
     
     // Add pagination parameters for endpoints that need them
     // Check if endpoint has page_size or is a known paginated endpoint
