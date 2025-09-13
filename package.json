@@ -1,0 +1,18 @@
+{
+  "name": "tiktok-api-mcp",
+  "version": "1.0.0",
+  "description": "TikTok Shop API Documentation Server with Swagger UI",
+  "main": "swagger-server.js",
+  "scripts": {
+    "start": "node swagger-server.js",
+    "dev": "node swagger-server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^5.1.0",
+    "swagger-ui-express": "^5.0.1"
+  }
+}
