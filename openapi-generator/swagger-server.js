@@ -8,7 +8,7 @@ const PORT = process.env.PORT || 3000;
 
 // Load the OpenAPI specification
 const swaggerDocument = JSON.parse(
-  fs.readFileSync(path.join(__dirname, 'tiktok-shop-openapi.json'), 'utf8')
+  fs.readFileSync(path.join(__dirname, '..', 'tiktok-shop-openapi.json'), 'utf8')
 );
 
 // Swagger UI options

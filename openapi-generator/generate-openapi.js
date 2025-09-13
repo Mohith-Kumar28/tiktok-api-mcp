@@ -623,7 +623,7 @@ function parseApiFile(filePath) {
 
 // Main function to generate OpenAPI spec
 function generateOpenApiSpec() {
-  const sdkPath = path.join(__dirname, 'nodejs-sdk');
+  const sdkPath = path.join(__dirname, '..', 'nodejs-sdk');
   const apiPath = path.join(sdkPath, 'api');
   const modelPath = path.join(sdkPath, 'model');
   
@@ -676,7 +676,7 @@ function generateOpenApiSpec() {
   console.log(`- ${Object.keys(openApiSpec.components.schemas).length} schemas`);
   
   // Write the OpenAPI specification to file
-  const outputPath = path.join(__dirname, 'tiktok-shop-openapi.json');
+  const outputPath = path.join(__dirname, '..', 'tiktok-shop-openapi.json');
   fs.writeFileSync(outputPath, JSON.stringify(openApiSpec, null, 2));
   
   console.log(`\nOpenAPI specification saved to: ${outputPath}`);

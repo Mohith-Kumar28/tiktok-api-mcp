@@ -2,10 +2,11 @@
   "name": "tiktok-api-mcp",
   "version": "1.0.0",
   "description": "TikTok Shop API Documentation Server with Swagger UI",
-  "main": "swagger-server.js",
+  "main": "openapi-generator/swagger-server.js",
   "scripts": {
-    "start": "node swagger-server.js",
-    "dev": "node swagger-server.js",
+    "start": "node openapi-generator/swagger-server.js",
+    "dev": "node openapi-generator/swagger-server.js",
+    "generate-openapi": "node openapi-generator/generate-openapi.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
