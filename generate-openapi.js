@@ -173,20 +173,64 @@ function parseModelFile(filePath) {
       
       properties[baseName] = convertTypeScriptType(propType);
       
-      // Extract description from JSDoc comments
-      const propRegex = new RegExp(`'${propName}'\?:\s*[^;]+;`, 'g');
+      // Extract description from JSDoc comments - improved logic
+      // Convert snake_case baseName to camelCase to match TypeScript property names
+      const camelCaseName = baseName.replace(/_([a-z])/g, (match, letter) => letter.toUpperCase());
+      const propRegex = new RegExp(`'${camelCaseName}'\?:\\s*[^;]+;`);
       const propMatch = content.match(propRegex);
+      
       if (propMatch) {
-        const beforeProp = content.substring(0, content.indexOf(propMatch[0]));
-        const commentMatch = beforeProp.match(/\/\*\*([\s\S]*?)\*\//g);
-        if (commentMatch && commentMatch.length > 0) {
-          const lastComment = commentMatch[commentMatch.length - 1];
-          const description = lastComment
-            .replace(/\/\*\*|\*\//g, '')
-            .replace(/\s*\*\s*/g, ' ')
+        const propIndex = content.indexOf(propMatch[0]);
+        // Look for JSDoc comment immediately before the property
+        const beforeProp = content.substring(0, propIndex);
+        
+        // Find the last JSDoc comment before this property
+        const commentMatches = beforeProp.match(/\/\*\*([\s\S]*?)\*\//g);
+        if (commentMatches && commentMatches.length > 0) {
+          const lastComment = commentMatches[commentMatches.length - 1];
+          
+          // Clean up the comment text
+          let description = lastComment
+            .replace(/\/\*\*|\*\//g, '') // Remove /** and */
+            .replace(/^\s*\*\s*/gm, '') // Remove leading * from each line
+            .replace(/\n\s*\n/g, '\n') // Remove empty lines
             .trim();
-          if (description && description !== propName) {
+          
+          // Only add description if it's meaningful and not just the property name
+          if (description && description.length > 3 && description !== propName && !description.includes('auto generated')) {
             properties[baseName].description = description;
+            console.log(`Added description for ${baseName}: ${description.substring(0, 50)}...`);
+          }
+        }
+      } else {
+        // Debug: Try to find the property in a different way
+        const lines = content.split('\n');
+        for (let i = 0; i < lines.length; i++) {
+          if (lines[i].includes(`'${camelCaseName}'`)) {
+            // Look for JSDoc comment above this line
+            let commentLines = [];
+            let j = i - 1;
+            while (j >= 0 && (lines[j].trim().startsWith('*') || lines[j].trim() === '' || lines[j].includes('/**') || lines[j].includes('*/'))) {
+              if (lines[j].includes('/**') || lines[j].includes('*/') || lines[j].trim().startsWith('*')) {
+                commentLines.unshift(lines[j]);
+              }
+              if (lines[j].includes('/**')) break;
+              j--;
+            }
+            
+            if (commentLines.length > 0) {
+              let description = commentLines.join('\n')
+                .replace(/\/\*\*|\*\//g, '') // Remove /** and */
+                .replace(/^\s*\*\s*/gm, '') // Remove leading * from each line
+                .replace(/\n\s*\n/g, '\n') // Remove empty lines
+                .trim();
+              
+              if (description && description.length > 3 && description !== propName && !description.includes('auto generated')) {
+                properties[baseName].description = description;
+                console.log(`Added description for ${baseName} (fallback): ${description.substring(0, 50)}...`);
+              }
+            }
+            break;
           }
         }
       }
