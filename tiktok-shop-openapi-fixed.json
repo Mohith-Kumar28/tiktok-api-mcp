@@ -2753,8 +2753,8 @@
           {
             "name": "shop_cipher",
             "in": "query",
-            "required": false,
-            "description": "Shop cipher for authentication",
+            "required": true,
+            "description": "Use this property to pass shop information in requesting the API. Failure in passing the correct value when requesting the API for cross-border shops will return incorrect response. Get API Authorization Shop to get shop_cipher.",
             "schema": {
               "type": "string"
             }
@@ -2853,10 +2853,11 @@
           {
             "name": "shop_cipher",
             "in": "query",
-            "required": false,
+            "required": true,
             "schema": {
               "type": "string"
-            }
+            },
+            "description": "Use this property to pass shop information in requesting the API. Failure in passing the correct value when requesting the API for cross-border shops will return incorrect response. Get API Authorization Shop to get shop_cipher."
           },
           {
             "name": "app_key",
@@ -2952,10 +2953,11 @@
           {
             "name": "shop_cipher",
             "in": "query",
-            "required": false,
+            "required": true,
             "schema": {
               "type": "string"
-            }
+            },
+            "description": "Use this property to pass shop information in requesting the API. Failure in passing the correct value when requesting the API for cross-border shops will return incorrect response. Get API Authorization Shop to get shop_cipher."
           },
           {
             "name": "app_key",
@@ -3067,10 +3069,11 @@
           {
             "name": "shop_cipher",
             "in": "query",
-            "required": false,
+            "required": true,
             "schema": {
               "type": "string"
-            }
+            },
+            "description": "Use this property to pass shop information in requesting the API. Failure in passing the correct value when requesting the API for cross-border shops will return incorrect response. Get API Authorization Shop to get shop_cipher."
           },
           {
             "name": "app_key",
@@ -3182,10 +3185,11 @@
           {
             "name": "shop_cipher",
             "in": "query",
-            "required": false,
+            "required": true,
             "schema": {
               "type": "string"
-            }
+            },
+            "description": "Use this property to pass shop information in requesting the API. Failure in passing the correct value when requesting the API for cross-border shops will return incorrect response. Get API Authorization Shop to get shop_cipher."
           },
           {
             "name": "app_key",
@@ -3271,10 +3275,11 @@
           {
             "name": "shop_cipher",
             "in": "query",
-            "required": false,
+            "required": true,
             "schema": {
               "type": "string"
-            }
+            },
+            "description": "Use this property to pass shop information in requesting the API. Failure in passing the correct value when requesting the API for cross-border shops will return incorrect response. Get API Authorization Shop to get shop_cipher."
           },
           {
             "name": "app_key",
@@ -3360,10 +3365,11 @@
           {
             "name": "shop_cipher",
             "in": "query",
-            "required": false,
+            "required": true,
             "schema": {
               "type": "string"
-            }
+            },
+            "description": "Use this property to pass shop information in requesting the API. Failure in passing the correct value when requesting the API for cross-border shops will return incorrect response. Get API Authorization Shop to get shop_cipher."
           },
           {
             "name": "app_key",
@@ -3459,10 +3465,11 @@
           {
             "name": "shop_cipher",
             "in": "query",
-            "required": false,
+            "required": true,
             "schema": {
               "type": "string"
-            }
+            },
+            "description": "Use this property to pass shop information in requesting the API. Failure in passing the correct value when requesting the API for cross-border shops will return incorrect response. Get API Authorization Shop to get shop_cipher."
           },
           {
             "name": "app_key",
@@ -3564,10 +3571,11 @@
           {
             "name": "shop_cipher",
             "in": "query",
-            "required": false,
+            "required": true,
             "schema": {
               "type": "string"
-            }
+            },
+            "description": "Use this property to pass shop information in requesting the API. Failure in passing the correct value when requesting the API for cross-border shops will return incorrect response. Get API Authorization Shop to get shop_cipher."
           },
           {
             "name": "app_key",
@@ -3663,10 +3671,11 @@
           {
             "name": "shop_cipher",
             "in": "query",
-            "required": false,
+            "required": true,
             "schema": {
               "type": "string"
-            }
+            },
+            "description": "Use this property to pass shop information in requesting the API. Failure in passing the correct value when requesting the API for cross-border shops will return incorrect response. Get API Authorization Shop to get shop_cipher."
           },
           {
             "name": "app_key",
@@ -3752,10 +3761,11 @@
           {
             "name": "shop_cipher",
             "in": "query",
-            "required": false,
+            "required": true,
             "schema": {
               "type": "string"
-            }
+            },
+            "description": "Use this property to pass shop information in requesting the API. Failure in passing the correct value when requesting the API for cross-border shops will return incorrect response. Get API Authorization Shop to get shop_cipher."
           },
           {
             "name": "app_key",
@@ -3857,10 +3867,11 @@
           {
             "name": "shop_cipher",
             "in": "query",
-            "required": false,
+            "required": true,
             "schema": {
               "type": "string"
-            }
+            },
+            "description": "Use this property to pass shop information in requesting the API. Failure in passing the correct value when requesting the API for cross-border shops will return incorrect response. Get API Authorization Shop to get shop_cipher."
           },
           {
             "name": "app_key",
@@ -3956,10 +3967,11 @@
           {
             "name": "shop_cipher",
             "in": "query",
-            "required": false,
+            "required": true,
             "schema": {
               "type": "string"
-            }
+            },
+            "description": "Use this property to pass shop information in requesting the API. Failure in passing the correct value when requesting the API for cross-border shops will return incorrect response. Get API Authorization Shop to get shop_cipher."
           },
           {
             "name": "app_key",
@@ -4055,10 +4067,11 @@
           {
             "name": "shop_cipher",
             "in": "query",
-            "required": false,
+            "required": true,
             "schema": {
               "type": "string"
-            }
+            },
+            "description": "Use this property to pass shop information in requesting the API. Failure in passing the correct value when requesting the API for cross-border shops will return incorrect response. Get API Authorization Shop to get shop_cipher."
           },
           {
             "name": "app_key",
@@ -4170,10 +4183,11 @@
           {
             "name": "shop_cipher",
             "in": "query",
-            "required": false,
+            "required": true,
             "schema": {
               "type": "string"
-            }
+            },
+            "description": "Use this property to pass shop information in requesting the API. Failure in passing the correct value when requesting the API for cross-border shops will return incorrect response. Get API Authorization Shop to get shop_cipher."
           },
           {
             "name": "app_key",
@@ -4285,10 +4299,11 @@
           {
             "name": "shop_cipher",
             "in": "query",
-            "required": false,
+            "required": true,
             "schema": {
               "type": "string"
-            }
+            },
+            "description": "Use this property to pass shop information in requesting the API. Failure in passing the correct value when requesting the API for cross-border shops will return incorrect response. Get API Authorization Shop to get shop_cipher."
           },
           {
             "name": "app_key",
@@ -4384,10 +4399,11 @@
           {
             "name": "shop_cipher",
             "in": "query",
-            "required": false,
+            "required": true,
             "schema": {
               "type": "string"
-            }
+            },
+            "description": "Use this property to pass shop information in requesting the API. Failure in passing the correct value when requesting the API for cross-border shops will return incorrect response. Get API Authorization Shop to get shop_cipher."
           },
           {
             "name": "app_key",
@@ -4483,10 +4499,11 @@
           {
             "name": "shop_cipher",
             "in": "query",
-            "required": false,
+            "required": true,
             "schema": {
               "type": "string"
-            }
+            },
+            "description": "Use this property to pass shop information in requesting the API. Failure in passing the correct value when requesting the API for cross-border shops will return incorrect response. Get API Authorization Shop to get shop_cipher."
           },
           {
             "name": "app_key",
@@ -4598,10 +4615,11 @@
           {
             "name": "shop_cipher",
             "in": "query",
-            "required": false,
+            "required": true,
             "schema": {
               "type": "string"
-            }
+            },
+            "description": "Use this property to pass shop information in requesting the API. Failure in passing the correct value when requesting the API for cross-border shops will return incorrect response. Get API Authorization Shop to get shop_cipher."
           },
           {
             "name": "app_key",
@@ -4713,10 +4731,11 @@
           {
             "name": "shop_cipher",
             "in": "query",
-            "required": false,
+            "required": true,
             "schema": {
               "type": "string"
-            }
+            },
+            "description": "Use this property to pass shop information in requesting the API. Failure in passing the correct value when requesting the API for cross-border shops will return incorrect response. Get API Authorization Shop to get shop_cipher."
           },
           {
             "name": "app_key",
@@ -4802,10 +4821,11 @@
           {
             "name": "shop_cipher",
             "in": "query",
-            "required": false,
+            "required": true,
             "schema": {
               "type": "string"
-            }
+            },
+            "description": "Use this property to pass shop information in requesting the API. Failure in passing the correct value when requesting the API for cross-border shops will return incorrect response. Get API Authorization Shop to get shop_cipher."
           },
           {
             "name": "app_key",
@@ -4901,10 +4921,11 @@
           {
             "name": "shop_cipher",
             "in": "query",
-            "required": false,
+            "required": true,
             "schema": {
               "type": "string"
-            }
+            },
+            "description": "Use this property to pass shop information in requesting the API. Failure in passing the correct value when requesting the API for cross-border shops will return incorrect response. Get API Authorization Shop to get shop_cipher."
           },
           {
             "name": "app_key",
@@ -5000,10 +5021,11 @@
           {
             "name": "shop_cipher",
             "in": "query",
-            "required": false,
+            "required": true,
             "schema": {
               "type": "string"
-            }
+            },
+            "description": "Use this property to pass shop information in requesting the API. Failure in passing the correct value when requesting the API for cross-border shops will return incorrect response. Get API Authorization Shop to get shop_cipher."
           },
           {
             "name": "app_key",
@@ -5089,10 +5111,11 @@
           {
             "name": "shop_cipher",
             "in": "query",
-            "required": false,
+            "required": true,
             "schema": {
               "type": "string"
-            }
+            },
+            "description": "Use this property to pass shop information in requesting the API. Failure in passing the correct value when requesting the API for cross-border shops will return incorrect response. Get API Authorization Shop to get shop_cipher."
           },
           {
             "name": "app_key",
@@ -5204,10 +5227,11 @@
           {
             "name": "shop_cipher",
             "in": "query",
-            "required": false,
+            "required": true,
             "schema": {
               "type": "string"
-            }
+            },
+            "description": "Use this property to pass shop information in requesting the API. Failure in passing the correct value when requesting the API for cross-border shops will return incorrect response. Get API Authorization Shop to get shop_cipher."
           },
           {
             "name": "app_key",
@@ -5293,10 +5317,11 @@
           {
             "name": "shop_cipher",
             "in": "query",
-            "required": false,
+            "required": true,
             "schema": {
               "type": "string"
-            }
+            },
+            "description": "Use this property to pass shop information in requesting the API. Failure in passing the correct value when requesting the API for cross-border shops will return incorrect response. Get API Authorization Shop to get shop_cipher."
           },
           {
             "name": "app_key",
@@ -5408,10 +5433,11 @@
           {
             "name": "shop_cipher",
             "in": "query",
-            "required": false,
+            "required": true,
             "schema": {
               "type": "string"
-            }
+            },
+            "description": "Use this property to pass shop information in requesting the API. Failure in passing the correct value when requesting the API for cross-border shops will return incorrect response. Get API Authorization Shop to get shop_cipher."
           },
           {
             "name": "app_key",
@@ -5507,10 +5533,11 @@
           {
             "name": "shop_cipher",
             "in": "query",
-            "required": false,
+            "required": true,
             "schema": {
               "type": "string"
-            }
+            },
+            "description": "Use this property to pass shop information in requesting the API. Failure in passing the correct value when requesting the API for cross-border shops will return incorrect response. Get API Authorization Shop to get shop_cipher."
           },
           {
             "name": "app_key",
@@ -5612,10 +5639,11 @@
           {
             "name": "shop_cipher",
             "in": "query",
-            "required": false,
+            "required": true,
             "schema": {
               "type": "string"
-            }
+            },
+            "description": "Use this property to pass shop information in requesting the API. Failure in passing the correct value when requesting the API for cross-border shops will return incorrect response. Get API Authorization Shop to get shop_cipher."
           },
           {
             "name": "app_key",
@@ -5711,10 +5739,11 @@
           {
             "name": "shop_cipher",
             "in": "query",
-            "required": false,
+            "required": true,
             "schema": {
               "type": "string"
-            }
+            },
+            "description": "Use this property to pass shop information in requesting the API. Failure in passing the correct value when requesting the API for cross-border shops will return incorrect response. Get API Authorization Shop to get shop_cipher."
           },
           {
             "name": "app_key",
@@ -5821,10 +5850,11 @@
           {
             "name": "shop_cipher",
             "in": "query",
-            "required": false,
+            "required": true,
             "schema": {
               "type": "string"
-            }
+            },
+            "description": "Use this property to pass shop information in requesting the API. Failure in passing the correct value when requesting the API for cross-border shops will return incorrect response. Get API Authorization Shop to get shop_cipher."
           },
           {
             "name": "app_key",
@@ -5920,10 +5950,11 @@
           {
             "name": "shop_cipher",
             "in": "query",
-            "required": false,
+            "required": true,
             "schema": {
               "type": "string"
-            }
+            },
+            "description": "Use this property to pass shop information in requesting the API. Failure in passing the correct value when requesting the API for cross-border shops will return incorrect response. Get API Authorization Shop to get shop_cipher."
           },
           {
             "name": "app_key",
@@ -6035,10 +6066,11 @@
           {
             "name": "shop_cipher",
             "in": "query",
-            "required": false,
+            "required": true,
             "schema": {
               "type": "string"
-            }
+            },
+            "description": "Use this property to pass shop information in requesting the API. Failure in passing the correct value when requesting the API for cross-border shops will return incorrect response. Get API Authorization Shop to get shop_cipher."
           },
           {
             "name": "app_key",
@@ -7261,10 +7293,11 @@
           {
             "name": "shop_cipher",
             "in": "query",
-            "required": false,
+            "required": true,
             "schema": {
               "type": "string"
-            }
+            },
+            "description": "Use this property to pass shop information in requesting the API. Failure in passing the correct value when requesting the API for cross-border shops will return incorrect response. Get API Authorization Shop to get shop_cipher."
           },
           {
             "name": "app_key",
@@ -7360,10 +7393,11 @@
           {
             "name": "shop_cipher",
             "in": "query",
-            "required": false,
+            "required": true,
             "schema": {
               "type": "string"
-            }
+            },
+            "description": "Use this property to pass shop information in requesting the API. Failure in passing the correct value when requesting the API for cross-border shops will return incorrect response. Get API Authorization Shop to get shop_cipher."
           },
           {
             "name": "app_key",
@@ -7459,10 +7493,11 @@
           {
             "name": "shop_cipher",
             "in": "query",
-            "required": false,
+            "required": true,
             "schema": {
               "type": "string"
-            }
+            },
+            "description": "Use this property to pass shop information in requesting the API. Failure in passing the correct value when requesting the API for cross-border shops will return incorrect response. Get API Authorization Shop to get shop_cipher."
           },
           {
             "name": "app_key",
@@ -7558,10 +7593,11 @@
           {
             "name": "shop_cipher",
             "in": "query",
-            "required": false,
+            "required": true,
             "schema": {
               "type": "string"
-            }
+            },
+            "description": "Use this property to pass shop information in requesting the API. Failure in passing the correct value when requesting the API for cross-border shops will return incorrect response. Get API Authorization Shop to get shop_cipher."
           },
           {
             "name": "app_key",
@@ -7664,10 +7700,11 @@
           {
             "name": "shop_cipher",
             "in": "query",
-            "required": false,
+            "required": true,
             "schema": {
               "type": "string"
-            }
+            },
+            "description": "Use this property to pass shop information in requesting the API. Failure in passing the correct value when requesting the API for cross-border shops will return incorrect response. Get API Authorization Shop to get shop_cipher."
           },
           {
             "name": "app_key",
@@ -7770,10 +7807,11 @@
           {
             "name": "shop_cipher",
             "in": "query",
-            "required": false,
+            "required": true,
             "schema": {
               "type": "string"
-            }
+            },
+            "description": "Use this property to pass shop information in requesting the API. Failure in passing the correct value when requesting the API for cross-border shops will return incorrect response. Get API Authorization Shop to get shop_cipher."
           },
           {
             "name": "app_key",
@@ -7876,10 +7914,11 @@
           {
             "name": "shop_cipher",
             "in": "query",
-            "required": false,
+            "required": true,
             "schema": {
               "type": "string"
-            }
+            },
+            "description": "Use this property to pass shop information in requesting the API. Failure in passing the correct value when requesting the API for cross-border shops will return incorrect response. Get API Authorization Shop to get shop_cipher."
           },
           {
             "name": "app_key",
@@ -7981,10 +8020,11 @@
           {
             "name": "shop_cipher",
             "in": "query",
-            "required": false,
+            "required": true,
             "schema": {
               "type": "string"
-            }
+            },
+            "description": "Use this property to pass shop information in requesting the API. Failure in passing the correct value when requesting the API for cross-border shops will return incorrect response. Get API Authorization Shop to get shop_cipher."
           },
           {
             "name": "app_key",
@@ -8070,10 +8110,11 @@
           {
             "name": "shop_cipher",
             "in": "query",
-            "required": false,
+            "required": true,
             "schema": {
               "type": "string"
-            }
+            },
+            "description": "Use this property to pass shop information in requesting the API. Failure in passing the correct value when requesting the API for cross-border shops will return incorrect response. Get API Authorization Shop to get shop_cipher."
           },
           {
             "name": "app_key",
@@ -8176,10 +8217,11 @@
           {
             "name": "shop_cipher",
             "in": "query",
-            "required": false,
+            "required": true,
             "schema": {
               "type": "string"
-            }
+            },
+            "description": "Use this property to pass shop information in requesting the API. Failure in passing the correct value when requesting the API for cross-border shops will return incorrect response. Get API Authorization Shop to get shop_cipher."
           },
           {
             "name": "app_key",
@@ -8281,10 +8323,11 @@
           {
             "name": "shop_cipher",
             "in": "query",
-            "required": false,
+            "required": true,
             "schema": {
               "type": "string"
-            }
+            },
+            "description": "Use this property to pass shop information in requesting the API. Failure in passing the correct value when requesting the API for cross-border shops will return incorrect response. Get API Authorization Shop to get shop_cipher."
           },
           {
             "name": "app_key",
@@ -8386,10 +8429,11 @@
           {
             "name": "shop_cipher",
             "in": "query",
-            "required": false,
+            "required": true,
             "schema": {
               "type": "string"
-            }
+            },
+            "description": "Use this property to pass shop information in requesting the API. Failure in passing the correct value when requesting the API for cross-border shops will return incorrect response. Get API Authorization Shop to get shop_cipher."
           },
           {
             "name": "app_key",
@@ -8475,10 +8519,11 @@
           {
             "name": "shop_cipher",
             "in": "query",
-            "required": false,
+            "required": true,
             "schema": {
               "type": "string"
-            }
+            },
+            "description": "Use this property to pass shop information in requesting the API. Failure in passing the correct value when requesting the API for cross-border shops will return incorrect response. Get API Authorization Shop to get shop_cipher."
           },
           {
             "name": "app_key",
@@ -8564,10 +8609,11 @@
           {
             "name": "shop_cipher",
             "in": "query",
-            "required": false,
+            "required": true,
             "schema": {
               "type": "string"
-            }
+            },
+            "description": "Use this property to pass shop information in requesting the API. Failure in passing the correct value when requesting the API for cross-border shops will return incorrect response. Get API Authorization Shop to get shop_cipher."
           },
           {
             "name": "app_key",
@@ -8653,10 +8699,11 @@
           {
             "name": "shop_cipher",
             "in": "query",
-            "required": false,
+            "required": true,
             "schema": {
               "type": "string"
-            }
+            },
+            "description": "Use this property to pass shop information in requesting the API. Failure in passing the correct value when requesting the API for cross-border shops will return incorrect response. Get API Authorization Shop to get shop_cipher."
           },
           {
             "name": "app_key",
@@ -8742,10 +8789,11 @@
           {
             "name": "shop_cipher",
             "in": "query",
-            "required": false,
+            "required": true,
             "schema": {
               "type": "string"
-            }
+            },
+            "description": "Use this property to pass shop information in requesting the API. Failure in passing the correct value when requesting the API for cross-border shops will return incorrect response. Get API Authorization Shop to get shop_cipher."
           },
           {
             "name": "app_key",
@@ -8841,10 +8889,11 @@
           {
             "name": "shop_cipher",
             "in": "query",
-            "required": false,
+            "required": true,
             "schema": {
               "type": "string"
-            }
+            },
+            "description": "Use this property to pass shop information in requesting the API. Failure in passing the correct value when requesting the API for cross-border shops will return incorrect response. Get API Authorization Shop to get shop_cipher."
           },
           {
             "name": "app_key",
@@ -8940,10 +8989,11 @@
           {
             "name": "shop_cipher",
             "in": "query",
-            "required": false,
+            "required": true,
             "schema": {
               "type": "string"
-            }
+            },
+            "description": "Use this property to pass shop information in requesting the API. Failure in passing the correct value when requesting the API for cross-border shops will return incorrect response. Get API Authorization Shop to get shop_cipher."
           },
           {
             "name": "app_key",
@@ -9039,10 +9089,11 @@
           {
             "name": "shop_cipher",
             "in": "query",
-            "required": false,
+            "required": true,
             "schema": {
               "type": "string"
-            }
+            },
+            "description": "Use this property to pass shop information in requesting the API. Failure in passing the correct value when requesting the API for cross-border shops will return incorrect response. Get API Authorization Shop to get shop_cipher."
           },
           {
             "name": "app_key",
@@ -9138,10 +9189,11 @@
           {
             "name": "shop_cipher",
             "in": "query",
-            "required": false,
+            "required": true,
             "schema": {
               "type": "string"
-            }
+            },
+            "description": "Use this property to pass shop information in requesting the API. Failure in passing the correct value when requesting the API for cross-border shops will return incorrect response. Get API Authorization Shop to get shop_cipher."
           },
           {
             "name": "app_key",
@@ -9227,10 +9279,11 @@
           {
             "name": "shop_cipher",
             "in": "query",
-            "required": false,
+            "required": true,
             "schema": {
               "type": "string"
-            }
+            },
+            "description": "Use this property to pass shop information in requesting the API. Failure in passing the correct value when requesting the API for cross-border shops will return incorrect response. Get API Authorization Shop to get shop_cipher."
           },
           {
             "name": "app_key",
@@ -9316,10 +9369,11 @@
           {
             "name": "shop_cipher",
             "in": "query",
-            "required": false,
+            "required": true,
             "schema": {
               "type": "string"
-            }
+            },
+            "description": "Use this property to pass shop information in requesting the API. Failure in passing the correct value when requesting the API for cross-border shops will return incorrect response. Get API Authorization Shop to get shop_cipher."
           },
           {
             "name": "app_key",
@@ -9415,10 +9469,11 @@
           {
             "name": "shop_cipher",
             "in": "query",
-            "required": false,
+            "required": true,
             "schema": {
               "type": "string"
-            }
+            },
+            "description": "Use this property to pass shop information in requesting the API. Failure in passing the correct value when requesting the API for cross-border shops will return incorrect response. Get API Authorization Shop to get shop_cipher."
           },
           {
             "name": "app_key",
@@ -9514,10 +9569,11 @@
           {
             "name": "shop_cipher",
             "in": "query",
-            "required": false,
+            "required": true,
             "schema": {
               "type": "string"
-            }
+            },
+            "description": "Use this property to pass shop information in requesting the API. Failure in passing the correct value when requesting the API for cross-border shops will return incorrect response. Get API Authorization Shop to get shop_cipher."
           },
           {
             "name": "app_key",
@@ -9603,10 +9659,11 @@
           {
             "name": "shop_cipher",
             "in": "query",
-            "required": false,
+            "required": true,
             "schema": {
               "type": "string"
-            }
+            },
+            "description": "Use this property to pass shop information in requesting the API. Failure in passing the correct value when requesting the API for cross-border shops will return incorrect response. Get API Authorization Shop to get shop_cipher."
           },
           {
             "name": "app_key",
@@ -9692,10 +9749,11 @@
           {
             "name": "shop_cipher",
             "in": "query",
-            "required": false,
+            "required": true,
             "schema": {
               "type": "string"
-            }
+            },
+            "description": "Use this property to pass shop information in requesting the API. Failure in passing the correct value when requesting the API for cross-border shops will return incorrect response. Get API Authorization Shop to get shop_cipher."
           },
           {
             "name": "app_key",
@@ -9791,10 +9849,11 @@
           {
             "name": "shop_cipher",
             "in": "query",
-            "required": false,
+            "required": true,
             "schema": {
               "type": "string"
-            }
+            },
+            "description": "Use this property to pass shop information in requesting the API. Failure in passing the correct value when requesting the API for cross-border shops will return incorrect response. Get API Authorization Shop to get shop_cipher."
           },
           {
             "name": "app_key",
@@ -9880,10 +9939,11 @@
           {
             "name": "shop_cipher",
             "in": "query",
-            "required": false,
+            "required": true,
             "schema": {
               "type": "string"
-            }
+            },
+            "description": "Use this property to pass shop information in requesting the API. Failure in passing the correct value when requesting the API for cross-border shops will return incorrect response. Get API Authorization Shop to get shop_cipher."
           },
           {
             "name": "app_key",
@@ -9979,10 +10039,11 @@
           {
             "name": "shop_cipher",
             "in": "query",
-            "required": false,
+            "required": true,
             "schema": {
               "type": "string"
-            }
+            },
+            "description": "Use this property to pass shop information in requesting the API. Failure in passing the correct value when requesting the API for cross-border shops will return incorrect response. Get API Authorization Shop to get shop_cipher."
           },
           {
             "name": "app_key",
@@ -10078,10 +10139,11 @@
           {
             "name": "shop_cipher",
             "in": "query",
-            "required": false,
+            "required": true,
             "schema": {
               "type": "string"
-            }
+            },
+            "description": "Use this property to pass shop information in requesting the API. Failure in passing the correct value when requesting the API for cross-border shops will return incorrect response. Get API Authorization Shop to get shop_cipher."
           },
           {
             "name": "app_key",
@@ -10177,10 +10239,11 @@
           {
             "name": "shop_cipher",
             "in": "query",
-            "required": false,
+            "required": true,
             "schema": {
               "type": "string"
-            }
+            },
+            "description": "Use this property to pass shop information in requesting the API. Failure in passing the correct value when requesting the API for cross-border shops will return incorrect response. Get API Authorization Shop to get shop_cipher."
           },
           {
             "name": "app_key",
@@ -10292,10 +10355,11 @@
           {
             "name": "shop_cipher",
             "in": "query",
-            "required": false,
+            "required": true,
             "schema": {
               "type": "string"
-            }
+            },
+            "description": "Use this property to pass shop information in requesting the API. Failure in passing the correct value when requesting the API for cross-border shops will return incorrect response. Get API Authorization Shop to get shop_cipher."
           },
           {
             "name": "app_key",
@@ -10391,10 +10455,11 @@
           {
             "name": "shop_cipher",
             "in": "query",
-            "required": false,
+            "required": true,
             "schema": {
               "type": "string"
-            }
+            },
+            "description": "Use this property to pass shop information in requesting the API. Failure in passing the correct value when requesting the API for cross-border shops will return incorrect response. Get API Authorization Shop to get shop_cipher."
           },
           {
             "name": "app_key",
@@ -10581,10 +10646,11 @@
           {
             "name": "shop_cipher",
             "in": "query",
-            "required": false,
+            "required": true,
             "schema": {
               "type": "string"
-            }
+            },
+            "description": "Use this property to pass shop information in requesting the API. Failure in passing the correct value when requesting the API for cross-border shops will return incorrect response. Get API Authorization Shop to get shop_cipher."
           },
           {
             "name": "app_key",
@@ -10680,10 +10746,11 @@
           {
             "name": "shop_cipher",
             "in": "query",
-            "required": false,
+            "required": true,
             "schema": {
               "type": "string"
-            }
+            },
+            "description": "Use this property to pass shop information in requesting the API. Failure in passing the correct value when requesting the API for cross-border shops will return incorrect response. Get API Authorization Shop to get shop_cipher."
           },
           {
             "name": "app_key",
@@ -10850,10 +10917,11 @@
           {
             "name": "shop_cipher",
             "in": "query",
-            "required": false,
+            "required": true,
             "schema": {
               "type": "string"
-            }
+            },
+            "description": "Use this property to pass shop information in requesting the API. Failure in passing the correct value when requesting the API for cross-border shops will return incorrect response. Get API Authorization Shop to get shop_cipher."
           },
           {
             "name": "app_key",
@@ -10939,10 +11007,11 @@
           {
             "name": "shop_cipher",
             "in": "query",
-            "required": false,
+            "required": true,
             "schema": {
               "type": "string"
-            }
+            },
+            "description": "Use this property to pass shop information in requesting the API. Failure in passing the correct value when requesting the API for cross-border shops will return incorrect response. Get API Authorization Shop to get shop_cipher."
           },
           {
             "name": "app_key",
@@ -11028,10 +11097,11 @@
           {
             "name": "shop_cipher",
             "in": "query",
-            "required": false,
+            "required": true,
             "schema": {
               "type": "string"
-            }
+            },
+            "description": "Use this property to pass shop information in requesting the API. Failure in passing the correct value when requesting the API for cross-border shops will return incorrect response. Get API Authorization Shop to get shop_cipher."
           },
           {
             "name": "app_key",
@@ -11133,10 +11203,11 @@
           {
             "name": "shop_cipher",
             "in": "query",
-            "required": false,
+            "required": true,
             "schema": {
               "type": "string"
-            }
+            },
+            "description": "Use this property to pass shop information in requesting the API. Failure in passing the correct value when requesting the API for cross-border shops will return incorrect response. Get API Authorization Shop to get shop_cipher."
           },
           {
             "name": "app_key",
@@ -11232,10 +11303,11 @@
           {
             "name": "shop_cipher",
             "in": "query",
-            "required": false,
+            "required": true,
             "schema": {
               "type": "string"
-            }
+            },
+            "description": "Use this property to pass shop information in requesting the API. Failure in passing the correct value when requesting the API for cross-border shops will return incorrect response. Get API Authorization Shop to get shop_cipher."
           },
           {
             "name": "app_key",
@@ -11321,10 +11393,11 @@
           {
             "name": "shop_cipher",
             "in": "query",
-            "required": false,
+            "required": true,
             "schema": {
               "type": "string"
-            }
+            },
+            "description": "Use this property to pass shop information in requesting the API. Failure in passing the correct value when requesting the API for cross-border shops will return incorrect response. Get API Authorization Shop to get shop_cipher."
           },
           {
             "name": "app_key",
@@ -11501,10 +11574,11 @@
           {
             "name": "shop_cipher",
             "in": "query",
-            "required": false,
+            "required": true,
             "schema": {
               "type": "string"
-            }
+            },
+            "description": "Use this property to pass shop information in requesting the API. Failure in passing the correct value when requesting the API for cross-border shops will return incorrect response. Get API Authorization Shop to get shop_cipher."
           },
           {
             "name": "app_key",
@@ -11752,10 +11826,11 @@
           {
             "name": "shop_cipher",
             "in": "query",
-            "required": false,
+            "required": true,
             "schema": {
               "type": "string"
-            }
+            },
+            "description": "Use this property to pass shop information in requesting the API. Failure in passing the correct value when requesting the API for cross-border shops will return incorrect response. Get API Authorization Shop to get shop_cipher."
           },
           {
             "name": "app_key",
@@ -11841,10 +11916,11 @@
           {
             "name": "shop_cipher",
             "in": "query",
-            "required": false,
+            "required": true,
             "schema": {
               "type": "string"
-            }
+            },
+            "description": "Use this property to pass shop information in requesting the API. Failure in passing the correct value when requesting the API for cross-border shops will return incorrect response. Get API Authorization Shop to get shop_cipher."
           },
           {
             "name": "app_key",
@@ -11930,10 +12006,11 @@
           {
             "name": "shop_cipher",
             "in": "query",
-            "required": false,
+            "required": true,
             "schema": {
               "type": "string"
-            }
+            },
+            "description": "Use this property to pass shop information in requesting the API. Failure in passing the correct value when requesting the API for cross-border shops will return incorrect response. Get API Authorization Shop to get shop_cipher."
           },
           {
             "name": "app_key",
@@ -12834,10 +12911,11 @@
           {
             "name": "shop_cipher",
             "in": "query",
-            "required": false,
+            "required": true,
             "schema": {
               "type": "string"
-            }
+            },
+            "description": "Use this property to pass shop information in requesting the API. Failure in passing the correct value when requesting the API for cross-border shops will return incorrect response. Get API Authorization Shop to get shop_cipher."
           },
           {
             "name": "app_key",
@@ -12933,10 +13011,11 @@
           {
             "name": "shop_cipher",
             "in": "query",
-            "required": false,
+            "required": true,
             "schema": {
               "type": "string"
-            }
+            },
+            "description": "Use this property to pass shop information in requesting the API. Failure in passing the correct value when requesting the API for cross-border shops will return incorrect response. Get API Authorization Shop to get shop_cipher."
           },
           {
             "name": "app_key",
@@ -13022,10 +13101,11 @@
           {
             "name": "shop_cipher",
             "in": "query",
-            "required": false,
+            "required": true,
             "schema": {
               "type": "string"
-            }
+            },
+            "description": "Use this property to pass shop information in requesting the API. Failure in passing the correct value when requesting the API for cross-border shops will return incorrect response. Get API Authorization Shop to get shop_cipher."
           },
           {
             "name": "app_key",
@@ -13121,10 +13201,11 @@
           {
             "name": "shop_cipher",
             "in": "query",
-            "required": false,
+            "required": true,
             "schema": {
               "type": "string"
-            }
+            },
+            "description": "Use this property to pass shop information in requesting the API. Failure in passing the correct value when requesting the API for cross-border shops will return incorrect response. Get API Authorization Shop to get shop_cipher."
           },
           {
             "name": "app_key",
@@ -13220,10 +13301,11 @@
           {
             "name": "shop_cipher",
             "in": "query",
-            "required": false,
+            "required": true,
             "schema": {
               "type": "string"
-            }
+            },
+            "description": "Use this property to pass shop information in requesting the API. Failure in passing the correct value when requesting the API for cross-border shops will return incorrect response. Get API Authorization Shop to get shop_cipher."
           },
           {
             "name": "app_key",
@@ -13319,10 +13401,11 @@
           {
             "name": "shop_cipher",
             "in": "query",
-            "required": false,
+            "required": true,
             "schema": {
               "type": "string"
-            }
+            },
+            "description": "Use this property to pass shop information in requesting the API. Failure in passing the correct value when requesting the API for cross-border shops will return incorrect response. Get API Authorization Shop to get shop_cipher."
           },
           {
             "name": "app_key",
@@ -13418,10 +13501,11 @@
           {
             "name": "shop_cipher",
             "in": "query",
-            "required": false,
+            "required": true,
             "schema": {
               "type": "string"
-            }
+            },
+            "description": "Use this property to pass shop information in requesting the API. Failure in passing the correct value when requesting the API for cross-border shops will return incorrect response. Get API Authorization Shop to get shop_cipher."
           },
           {
             "name": "app_key",
@@ -13517,10 +13601,11 @@
           {
             "name": "shop_cipher",
             "in": "query",
-            "required": false,
+            "required": true,
             "schema": {
               "type": "string"
-            }
+            },
+            "description": "Use this property to pass shop information in requesting the API. Failure in passing the correct value when requesting the API for cross-border shops will return incorrect response. Get API Authorization Shop to get shop_cipher."
           },
           {
             "name": "app_key",
@@ -13616,10 +13701,11 @@
           {
             "name": "shop_cipher",
             "in": "query",
-            "required": false,
+            "required": true,
             "schema": {
               "type": "string"
-            }
+            },
+            "description": "Use this property to pass shop information in requesting the API. Failure in passing the correct value when requesting the API for cross-border shops will return incorrect response. Get API Authorization Shop to get shop_cipher."
           },
           {
             "name": "app_key",
@@ -13715,10 +13801,11 @@
           {
             "name": "shop_cipher",
             "in": "query",
-            "required": false,
+            "required": true,
             "schema": {
               "type": "string"
-            }
+            },
+            "description": "Use this property to pass shop information in requesting the API. Failure in passing the correct value when requesting the API for cross-border shops will return incorrect response. Get API Authorization Shop to get shop_cipher."
           },
           {
             "name": "app_key",
@@ -13814,10 +13901,11 @@
           {
             "name": "shop_cipher",
             "in": "query",
-            "required": false,
+            "required": true,
             "schema": {
               "type": "string"
-            }
+            },
+            "description": "Use this property to pass shop information in requesting the API. Failure in passing the correct value when requesting the API for cross-border shops will return incorrect response. Get API Authorization Shop to get shop_cipher."
           },
           {
             "name": "app_key",
@@ -13929,10 +14017,11 @@
           {
             "name": "shop_cipher",
             "in": "query",
-            "required": false,
+            "required": true,
             "schema": {
               "type": "string"
-            }
+            },
+            "description": "Use this property to pass shop information in requesting the API. Failure in passing the correct value when requesting the API for cross-border shops will return incorrect response. Get API Authorization Shop to get shop_cipher."
           },
           {
             "name": "app_key",
@@ -14135,10 +14224,11 @@
           {
             "name": "shop_cipher",
             "in": "query",
-            "required": false,
+            "required": true,
             "schema": {
               "type": "string"
-            }
+            },
+            "description": "Use this property to pass shop information in requesting the API. Failure in passing the correct value when requesting the API for cross-border shops will return incorrect response. Get API Authorization Shop to get shop_cipher."
           },
           {
             "name": "app_key",
@@ -14240,10 +14330,11 @@
           {
             "name": "shop_cipher",
             "in": "query",
-            "required": false,
+            "required": true,
             "schema": {
               "type": "string"
-            }
+            },
+            "description": "Use this property to pass shop information in requesting the API. Failure in passing the correct value when requesting the API for cross-border shops will return incorrect response. Get API Authorization Shop to get shop_cipher."
           },
           {
             "name": "app_key",
@@ -14420,10 +14511,11 @@
           {
             "name": "shop_cipher",
             "in": "query",
-            "required": false,
+            "required": true,
             "schema": {
               "type": "string"
-            }
+            },
+            "description": "Use this property to pass shop information in requesting the API. Failure in passing the correct value when requesting the API for cross-border shops will return incorrect response. Get API Authorization Shop to get shop_cipher."
           },
           {
             "name": "app_key",
@@ -14519,10 +14611,11 @@
           {
             "name": "shop_cipher",
             "in": "query",
-            "required": false,
+            "required": true,
             "schema": {
               "type": "string"
-            }
+            },
+            "description": "Use this property to pass shop information in requesting the API. Failure in passing the correct value when requesting the API for cross-border shops will return incorrect response. Get API Authorization Shop to get shop_cipher."
           },
           {
             "name": "app_key",
@@ -14608,10 +14701,11 @@
           {
             "name": "shop_cipher",
             "in": "query",
-            "required": false,
+            "required": true,
             "schema": {
               "type": "string"
-            }
+            },
+            "description": "Use this property to pass shop information in requesting the API. Failure in passing the correct value when requesting the API for cross-border shops will return incorrect response. Get API Authorization Shop to get shop_cipher."
           },
           {
             "name": "app_key",
@@ -14697,10 +14791,11 @@
           {
             "name": "shop_cipher",
             "in": "query",
-            "required": false,
+            "required": true,
             "schema": {
               "type": "string"
-            }
+            },
+            "description": "Use this property to pass shop information in requesting the API. Failure in passing the correct value when requesting the API for cross-border shops will return incorrect response. Get API Authorization Shop to get shop_cipher."
           },
           {
             "name": "app_key",
@@ -14867,10 +14962,11 @@
           {
             "name": "shop_cipher",
             "in": "query",
-            "required": false,
+            "required": true,
             "schema": {
               "type": "string"
-            }
+            },
+            "description": "Use this property to pass shop information in requesting the API. Failure in passing the correct value when requesting the API for cross-border shops will return incorrect response. Get API Authorization Shop to get shop_cipher."
           },
           {
             "name": "app_key",
@@ -15641,10 +15737,11 @@
           {
             "name": "shop_cipher",
             "in": "query",
-            "required": false,
+            "required": true,
             "schema": {
               "type": "string"
-            }
+            },
+            "description": "Use this property to pass shop information in requesting the API. Failure in passing the correct value when requesting the API for cross-border shops will return incorrect response. Get API Authorization Shop to get shop_cipher."
           },
           {
             "name": "app_key",
@@ -15970,10 +16067,11 @@
           {
             "name": "shop_cipher",
             "in": "query",
-            "required": false,
+            "required": true,
             "schema": {
               "type": "string"
-            }
+            },
+            "description": "Use this property to pass shop information in requesting the API. Failure in passing the correct value when requesting the API for cross-border shops will return incorrect response. Get API Authorization Shop to get shop_cipher."
           },
           {
             "name": "app_key",
@@ -16069,10 +16167,11 @@
           {
             "name": "shop_cipher",
             "in": "query",
-            "required": false,
+            "required": true,
             "schema": {
               "type": "string"
-            }
+            },
+            "description": "Use this property to pass shop information in requesting the API. Failure in passing the correct value when requesting the API for cross-border shops will return incorrect response. Get API Authorization Shop to get shop_cipher."
           },
           {
             "name": "app_key",
@@ -16168,10 +16267,11 @@
           {
             "name": "shop_cipher",
             "in": "query",
-            "required": false,
+            "required": true,
             "schema": {
               "type": "string"
-            }
+            },
+            "description": "Use this property to pass shop information in requesting the API. Failure in passing the correct value when requesting the API for cross-border shops will return incorrect response. Get API Authorization Shop to get shop_cipher."
           },
           {
             "name": "app_key",
@@ -16257,10 +16357,11 @@
           {
             "name": "shop_cipher",
             "in": "query",
-            "required": false,
+            "required": true,
             "schema": {
               "type": "string"
-            }
+            },
+            "description": "Use this property to pass shop information in requesting the API. Failure in passing the correct value when requesting the API for cross-border shops will return incorrect response. Get API Authorization Shop to get shop_cipher."
           },
           {
             "name": "app_key",
@@ -16346,10 +16447,11 @@
           {
             "name": "shop_cipher",
             "in": "query",
-            "required": false,
+            "required": true,
             "schema": {
               "type": "string"
-            }
+            },
+            "description": "Use this property to pass shop information in requesting the API. Failure in passing the correct value when requesting the API for cross-border shops will return incorrect response. Get API Authorization Shop to get shop_cipher."
           },
           {
             "name": "app_key",
@@ -16445,10 +16547,11 @@
           {
             "name": "shop_cipher",
             "in": "query",
-            "required": false,
+            "required": true,
             "schema": {
               "type": "string"
-            }
+            },
+            "description": "Use this property to pass shop information in requesting the API. Failure in passing the correct value when requesting the API for cross-border shops will return incorrect response. Get API Authorization Shop to get shop_cipher."
           },
           {
             "name": "app_key",
@@ -16534,10 +16637,11 @@
           {
             "name": "shop_cipher",
             "in": "query",
-            "required": false,
+            "required": true,
             "schema": {
               "type": "string"
-            }
+            },
+            "description": "Use this property to pass shop information in requesting the API. Failure in passing the correct value when requesting the API for cross-border shops will return incorrect response. Get API Authorization Shop to get shop_cipher."
           },
           {
             "name": "app_key",
@@ -16623,10 +16727,11 @@
           {
             "name": "shop_cipher",
             "in": "query",
-            "required": false,
+            "required": true,
             "schema": {
               "type": "string"
-            }
+            },
+            "description": "Use this property to pass shop information in requesting the API. Failure in passing the correct value when requesting the API for cross-border shops will return incorrect response. Get API Authorization Shop to get shop_cipher."
           },
           {
             "name": "app_key",
@@ -16722,10 +16827,11 @@
           {
             "name": "shop_cipher",
             "in": "query",
-            "required": false,
+            "required": true,
             "schema": {
               "type": "string"
-            }
+            },
+            "description": "Use this property to pass shop information in requesting the API. Failure in passing the correct value when requesting the API for cross-border shops will return incorrect response. Get API Authorization Shop to get shop_cipher."
           },
           {
             "name": "app_key",
@@ -16821,10 +16927,11 @@
           {
             "name": "shop_cipher",
             "in": "query",
-            "required": false,
+            "required": true,
             "schema": {
               "type": "string"
-            }
+            },
+            "description": "Use this property to pass shop information in requesting the API. Failure in passing the correct value when requesting the API for cross-border shops will return incorrect response. Get API Authorization Shop to get shop_cipher."
           },
           {
             "name": "app_key",
@@ -16920,10 +17027,11 @@
           {
             "name": "shop_cipher",
             "in": "query",
-            "required": false,
+            "required": true,
             "schema": {
               "type": "string"
-            }
+            },
+            "description": "Use this property to pass shop information in requesting the API. Failure in passing the correct value when requesting the API for cross-border shops will return incorrect response. Get API Authorization Shop to get shop_cipher."
           },
           {
             "name": "app_key",
@@ -17019,10 +17127,11 @@
           {
             "name": "shop_cipher",
             "in": "query",
-            "required": false,
+            "required": true,
             "schema": {
               "type": "string"
-            }
+            },
+            "description": "Use this property to pass shop information in requesting the API. Failure in passing the correct value when requesting the API for cross-border shops will return incorrect response. Get API Authorization Shop to get shop_cipher."
           },
           {
             "name": "app_key",
@@ -17124,10 +17233,11 @@
           {
             "name": "shop_cipher",
             "in": "query",
-            "required": false,
+            "required": true,
             "schema": {
               "type": "string"
-            }
+            },
+            "description": "Use this property to pass shop information in requesting the API. Failure in passing the correct value when requesting the API for cross-border shops will return incorrect response. Get API Authorization Shop to get shop_cipher."
           },
           {
             "name": "app_key",
@@ -17223,10 +17333,11 @@
           {
             "name": "shop_cipher",
             "in": "query",
-            "required": false,
+            "required": true,
             "schema": {
               "type": "string"
-            }
+            },
+            "description": "Use this property to pass shop information in requesting the API. Failure in passing the correct value when requesting the API for cross-border shops will return incorrect response. Get API Authorization Shop to get shop_cipher."
           },
           {
             "name": "app_key",
@@ -17312,10 +17423,11 @@
           {
             "name": "shop_cipher",
             "in": "query",
-            "required": false,
+            "required": true,
             "schema": {
               "type": "string"
-            }
+            },
+            "description": "Use this property to pass shop information in requesting the API. Failure in passing the correct value when requesting the API for cross-border shops will return incorrect response. Get API Authorization Shop to get shop_cipher."
           },
           {
             "name": "app_key",
@@ -17411,10 +17523,11 @@
           {
             "name": "shop_cipher",
             "in": "query",
-            "required": false,
+            "required": true,
             "schema": {
               "type": "string"
-            }
+            },
+            "description": "Use this property to pass shop information in requesting the API. Failure in passing the correct value when requesting the API for cross-border shops will return incorrect response. Get API Authorization Shop to get shop_cipher."
           },
           {
             "name": "app_key",
@@ -17526,10 +17639,11 @@
           {
             "name": "shop_cipher",
             "in": "query",
-            "required": false,
+            "required": true,
             "schema": {
               "type": "string"
-            }
+            },
+            "description": "Use this property to pass shop information in requesting the API. Failure in passing the correct value when requesting the API for cross-border shops will return incorrect response. Get API Authorization Shop to get shop_cipher."
           },
           {
             "name": "app_key",
@@ -17625,10 +17739,11 @@
           {
             "name": "shop_cipher",
             "in": "query",
-            "required": false,
+            "required": true,
             "schema": {
               "type": "string"
-            }
+            },
+            "description": "Use this property to pass shop information in requesting the API. Failure in passing the correct value when requesting the API for cross-border shops will return incorrect response. Get API Authorization Shop to get shop_cipher."
           },
           {
             "name": "app_key",
@@ -17714,10 +17829,11 @@
           {
             "name": "shop_cipher",
             "in": "query",
-            "required": false,
+            "required": true,
             "schema": {
               "type": "string"
-            }
+            },
+            "description": "Use this property to pass shop information in requesting the API. Failure in passing the correct value when requesting the API for cross-border shops will return incorrect response. Get API Authorization Shop to get shop_cipher."
           },
           {
             "name": "app_key",
@@ -17813,10 +17929,11 @@
           {
             "name": "shop_cipher",
             "in": "query",
-            "required": false,
+            "required": true,
             "schema": {
               "type": "string"
-            }
+            },
+            "description": "Use this property to pass shop information in requesting the API. Failure in passing the correct value when requesting the API for cross-border shops will return incorrect response. Get API Authorization Shop to get shop_cipher."
           },
           {
             "name": "app_key",
@@ -17902,10 +18019,11 @@
           {
             "name": "shop_cipher",
             "in": "query",
-            "required": false,
+            "required": true,
             "schema": {
               "type": "string"
-            }
+            },
+            "description": "Use this property to pass shop information in requesting the API. Failure in passing the correct value when requesting the API for cross-border shops will return incorrect response. Get API Authorization Shop to get shop_cipher."
           },
           {
             "name": "app_key",
@@ -18001,10 +18119,11 @@
           {
             "name": "shop_cipher",
             "in": "query",
-            "required": false,
+            "required": true,
             "schema": {
               "type": "string"
-            }
+            },
+            "description": "Use this property to pass shop information in requesting the API. Failure in passing the correct value when requesting the API for cross-border shops will return incorrect response. Get API Authorization Shop to get shop_cipher."
           },
           {
             "name": "app_key",
@@ -18100,10 +18219,11 @@
           {
             "name": "shop_cipher",
             "in": "query",
-            "required": false,
+            "required": true,
             "schema": {
               "type": "string"
-            }
+            },
+            "description": "Use this property to pass shop information in requesting the API. Failure in passing the correct value when requesting the API for cross-border shops will return incorrect response. Get API Authorization Shop to get shop_cipher."
           },
           {
             "name": "app_key",
@@ -18189,10 +18309,11 @@
           {
             "name": "shop_cipher",
             "in": "query",
-            "required": false,
+            "required": true,
             "schema": {
               "type": "string"
-            }
+            },
+            "description": "Use this property to pass shop information in requesting the API. Failure in passing the correct value when requesting the API for cross-border shops will return incorrect response. Get API Authorization Shop to get shop_cipher."
           },
           {
             "name": "app_key",
@@ -18304,10 +18425,11 @@
           {
             "name": "shop_cipher",
             "in": "query",
-            "required": false,
+            "required": true,
             "schema": {
               "type": "string"
-            }
+            },
+            "description": "Use this property to pass shop information in requesting the API. Failure in passing the correct value when requesting the API for cross-border shops will return incorrect response. Get API Authorization Shop to get shop_cipher."
           },
           {
             "name": "app_key",
