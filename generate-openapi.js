@@ -59,8 +59,60 @@ const openApiSpec = {
   paths: {}
 };
 
+// Function to get TikTok Shop API common required parameters
+function getTikTokShopCommonParameters() {
+  return [
+    {
+      name: 'shop_cipher',
+      in: 'query',
+      required: true,
+      schema: {
+        type: 'string'
+      },
+      description: 'Encrypted shop identifier required for TikTok Shop API authentication. This parameter is mandatory for all API calls to identify and authenticate the shop making the request.'
+    },
+    {
+      name: 'app_key',
+      in: 'query',
+      required: true,
+      schema: {
+        type: 'string'
+      },
+      description: 'Application key provided by TikTok Shop for API authentication'
+    },
+    {
+      name: 'sign',
+      in: 'query',
+      required: true,
+      schema: {
+        type: 'string'
+      },
+      description: 'Request signature for API authentication and integrity verification'
+    },
+    {
+      name: 'timestamp',
+      in: 'query',
+      required: true,
+      schema: {
+        type: 'integer',
+        format: 'int64'
+      },
+      description: 'Unix timestamp when the request was made, used for API authentication'
+    }
+  ];
+}
+
 // Helper function to convert TypeScript types to OpenAPI types
 function convertTypeScriptType(tsType) {
+  // Handle complex Promise response types like { response: http.IncomingMessage; body: SomeType }
+  if (tsType.includes('{ response:') && tsType.includes('body:')) {
+    const bodyMatch = tsType.match(/body:\s*([^;\}]+)/);
+    if (bodyMatch) {
+      const bodyType = bodyMatch[1].trim();
+      return convertTypeScriptType(bodyType);
+    }
+  }
+  
   if (tsType.startsWith('Array<')) {
     const innerType = tsType.slice(6, -1);
     return {
@@ -182,8 +234,8 @@ function parseApiFile(filePath) {
 
   const className = classMatch[1];
   
-  // Find all public async methods
-  const methodMatches = content.match(/public\s+async\s+(\w+)\s*\([^)]*\)\s*:\s*Promise<[^>]+>/g) || [];
+  // Find all public async methods - handle multiline signatures
+  const methodMatches = content.match(/public\s+async\s+(\w+)\s*\([^)]*\)\s*:\s*Promise<[\s\S]*?>/g) || [];
 
   methodMatches.forEach(methodSignature => {
     const methodNameMatch = methodSignature.match(/public\s+async\s+(\w+)/);
@@ -211,26 +263,76 @@ function parseApiFile(filePath) {
 
     const httpMethod = httpMethodMatch[1].toLowerCase();
     
-    // Extract parameters from method signature
-    const paramRegex = new RegExp(`public\s+async\s+${methodName}\s*\(([^)]*)\)`);
-    const paramMatch = methodContent.match(paramRegex);
+    // Extract path parameters from the URL template
+    const pathParams = [];
+    const pathParamMatches = apiPath.match(/\{([^}]+)\}/g);
+    if (pathParamMatches) {
+      pathParamMatches.forEach(match => {
+        const paramName = match.slice(1, -1); // Remove { and }
+        pathParams.push(paramName);
+      });
+    }
+    
+    // Extract parameters from method signature - handle multiline
+    const paramRegex = new RegExp(`public\\s+async\\s+${methodName}\\s*\\(([\\s\\S]*?)\\)\\s*:\\s*Promise`, 'm');
+    const paramMatch = methodSignature.match(paramRegex);
     
     const parameters = [];
     const requestBody = {};
     
     if (paramMatch && paramMatch[1]) {
-      const params = paramMatch[1].split(',').map(p => p.trim());
+      // Better parameter parsing to handle complex signatures
+      const paramString = paramMatch[1].replace(/\s+/g, ' ').trim();
+      
+      // Split parameters more carefully, handling nested generics
+      const params = [];
+      let currentParam = '';
+      let depth = 0;
+      let inString = false;
+      let stringChar = '';
+      
+      for (let i = 0; i < paramString.length; i++) {
+        const char = paramString[i];
+        
+        if (!inString && (char === '"' || char === "'")) {
+          inString = true;
+          stringChar = char;
+        } else if (inString && char === stringChar) {
+          inString = false;
+        } else if (!inString) {
+          if (char === '<' || char === '(' || char === '[' || char === '{') {
+            depth++;
+          } else if (char === '>' || char === ')' || char === ']' || char === '}') {
+            depth--;
+          } else if (char === ',' && depth === 0) {
+            if (currentParam.trim()) {
+              params.push(currentParam.trim());
+            }
+            currentParam = '';
+            continue;
+          }
+        }
+        
+        currentParam += char;
+      }
+      
+      if (currentParam.trim()) {
+        params.push(currentParam.trim());
+      }
       
       params.forEach(param => {
-        const paramParts = param.split(':').map(p => p.trim());
-        if (paramParts.length >= 2) {
-          const paramName = paramParts[0];
-          const paramType = paramParts[1].replace(/\?$/, '');
+          const colonIndex = param.indexOf(':');
+          if (colonIndex === -1) return;
+          
+          const paramName = param.substring(0, colonIndex).trim();
+          const paramType = param.substring(colonIndex + 1).trim().replace(/\?$/, '');
           
           // Skip options parameter
-          if (paramName === 'options') return;
-          
-          if (paramName.includes('RequestBody') || paramName.includes('Body')) {
+          if (paramName === 'options') {
+            return;
+          }
+            
+            if (paramName.includes('RequestBody') || paramName.includes('Body')) {
             // This is a request body
             requestBody.content = {
               'application/json': {
@@ -242,22 +344,41 @@ function parseApiFile(filePath) {
             // This is a parameter
             const isOptional = param.includes('?');
             
-            // Determine parameter location based on name and method
+            // Determine parameter location based on name and context
             let paramIn = 'query';
-            if (paramName.includes('Token') || paramName === 'xTtsAccessToken' || paramName === 'contentType') {
+            let actualParamName = paramName;
+            
+            // Check if this is a path parameter
+            const pathParamName = paramName.replace(/([A-Z])/g, '_$1').toLowerCase().replace(/^_/, '');
+            if (pathParams.includes(pathParamName) || pathParams.includes(paramName)) {
+              paramIn = 'path';
+              actualParamName = pathParamName;
+            } else if (paramName.includes('Token') || paramName === 'xTtsAccessToken') {
               paramIn = 'header';
+              actualParamName = 'x-tts-access-token';
+            } else if (paramName === 'contentType') {
+              paramIn = 'header';
+              actualParamName = 'Content-Type';
+            } else {
+              // For query parameters, convert camelCase to snake_case
+              actualParamName = paramName.replace(/([A-Z])/g, '_$1').toLowerCase().replace(/^_/, '');
+              
+              // Special handling for shopCipher to ensure it maps to shop_cipher consistently
+              if (paramName === 'shopCipher' || actualParamName === 'shop_cipher') {
+                actualParamName = 'shop_cipher';
+              }
             }
             
             const parameter = {
-              name: paramName === 'xTtsAccessToken' ? 'x-tts-access-token' : 
-                    paramName === 'contentType' ? 'Content-Type' :
-                    paramName.replace(/([A-Z])/g, '_$1').toLowerCase().replace(/^_/, ''),
+              name: actualParamName,
               in: paramIn,
-              required: !isOptional,
+              required: paramIn === 'path' || !isOptional || paramName === 'xTtsAccessToken' || actualParamName === 'x-tts-access-token', // Path parameters and auth tokens are always required
               schema: convertTypeScriptType(paramType)
             };
             
-            // Add description for common parameters
+            // Don't add optional suffix - we'll handle deduplication by base name
+            
+            // Add descriptions for common parameters
             if (paramName === 'pageSize') {
               parameter.description = 'Number of items per page';
             } else if (paramName === 'pageToken') {
@@ -266,11 +387,14 @@ function parseApiFile(filePath) {
               parameter.description = 'Access token for authentication';
             } else if (paramName === 'contentType') {
               parameter.description = 'Content type of the request';
+            } else if (paramName === 'shopCipher') {
+              parameter.description = 'Shop cipher for API authentication';
+            } else if (paramName.includes('Id')) {
+              parameter.description = `${paramName} identifier`;
             }
             
             parameters.push(parameter);
           }
-        }
       });
     }
     
@@ -349,8 +473,87 @@ function parseApiFile(filePath) {
       }
     };
     
-    if (parameters.length > 0) {
-      operation.parameters = parameters;
+    // Add TikTok Shop API common required parameters to all operations
+    const commonParameters = getTikTokShopCommonParameters();
+    
+    // Create parameter map for deduplication
+    const parameterMap = new Map();
+    
+    // Helper function to get base parameter name (remove optional suffixes)
+    function getBaseParameterName(paramName) {
+      return paramName.replace(/[?]$/, '');
+    }
+    
+    // Add original API parameters first
+    parameters.forEach(param => {
+      const baseName = getBaseParameterName(param.name);
+      const baseKey = `${baseName}_${param.in}`;
+      // Clean the parameter name (remove optional suffix)
+      param.name = baseName;
+      parameterMap.set(baseKey, param);
+    });
+    
+    // Add common parameters (avoiding duplicates and updating existing ones)
+    commonParameters.forEach(commonParam => {
+      const baseName = getBaseParameterName(commonParam.name);
+      const baseKey = `${baseName}_${commonParam.in}`;
+      if (parameterMap.has(baseKey)) {
+        const existing = parameterMap.get(baseKey);
+        // Update existing parameter to be required and add description if missing
+        existing.required = true;
+        if (!existing.description && commonParam.description) {
+          existing.description = commonParam.description;
+        }
+        parameterMap.set(baseKey, existing);
+      } else {
+        parameterMap.set(baseKey, commonParam);
+      }
+    });
+    
+    // Add pagination parameters for endpoints that need them
+    // Check if endpoint has page_size or is a known paginated endpoint
+    const hasPageSize = parameterMap.has('page_size_query');
+    const isPaginatedEndpoint = apiPath.includes('/orders') || 
+                               apiPath.includes('/products') || 
+                               apiPath.includes('/sample_applications') ||
+                               apiPath.includes('/marketplace_creators') ||
+                               apiPath.includes('/search');
+    
+    if (hasPageSize || isPaginatedEndpoint) {
+      // Always add page_token if page_size exists or it's a paginated endpoint
+      const pageTokenParam = {
+        name: 'page_token',
+        in: 'query',
+        required: false,
+        schema: { type: 'string' },
+        description: 'Token for pagination to get the next page of results'
+      };
+      
+      const pageTokenKey = 'page_token_query';
+      if (!parameterMap.has(pageTokenKey)) {
+        parameterMap.set(pageTokenKey, pageTokenParam);
+      }
+      
+      // Also ensure page_size is present for paginated endpoints
+      const pageSizeParam = {
+        name: 'page_size',
+        in: 'query', 
+        required: false,
+        schema: { type: 'number' },
+        description: 'Number of items to return per page (default: 10, max: 50)'
+      };
+      
+      const pageSizeKey = 'page_size_query';
+      if (!parameterMap.has(pageSizeKey)) {
+        parameterMap.set(pageSizeKey, pageSizeParam);
+      }
+    }
+    
+    // Convert map back to array
+    const allParameters = Array.from(parameterMap.values());
+    
+    if (allParameters.length > 0) {
+      operation.parameters = allParameters;
     }
     
     if (Object.keys(requestBody).length > 0) {
