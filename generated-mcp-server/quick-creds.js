@@ -36,3 +36,4 @@ console.log(`sign: ${signature}`);
 console.log('');
 console.log('✅ Copy these values to use in your MCP calls!');
 
+

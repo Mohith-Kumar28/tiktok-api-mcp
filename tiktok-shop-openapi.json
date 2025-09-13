@@ -43057,15 +43057,6 @@
             }
           },
           {
-            "name": "shop_cipher",
-            "in": "query",
-            "required": true,
-            "schema": {
-              "type": "string"
-            },
-            "description": "Encrypted shop identifier required for TikTok Shop API authentication. This parameter is mandatory for all API calls to identify and authenticate the shop making the request."
-          },
-          {
             "name": "app_key",
             "in": "query",
             "required": true,
@@ -43203,15 +43194,6 @@
             }
           },
           {
-            "name": "shop_cipher",
-            "in": "query",
-            "required": true,
-            "schema": {
-              "type": "string"
-            },
-            "description": "Encrypted shop identifier required for TikTok Shop API authentication. This parameter is mandatory for all API calls to identify and authenticate the shop making the request."
-          },
-          {
             "name": "app_key",
             "in": "query",
             "required": true,
@@ -43323,15 +43305,6 @@
             "description": "Content type of the request"
           },
           {
-            "name": "shop_cipher",
-            "in": "query",
-            "required": true,
-            "schema": {
-              "type": "string"
-            },
-            "description": "Encrypted shop identifier required for TikTok Shop API authentication. This parameter is mandatory for all API calls to identify and authenticate the shop making the request."
-          },
-          {
             "name": "app_key",
             "in": "query",
             "required": true,
@@ -43432,15 +43405,6 @@
               "type": "string"
             },
             "description": "Content type of the request"
-          },
-          {
-            "name": "shop_cipher",
-            "in": "query",
-            "required": true,
-            "schema": {
-              "type": "string"
-            },
-            "description": "Encrypted shop identifier required for TikTok Shop API authentication. This parameter is mandatory for all API calls to identify and authenticate the shop making the request."
           },
           {
             "name": "app_key",
@@ -43589,15 +43553,6 @@
             "description": "Content type of the request"
           },
           {
-            "name": "shop_cipher",
-            "in": "query",
-            "required": true,
-            "schema": {
-              "type": "string"
-            },
-            "description": "Encrypted shop identifier required for TikTok Shop API authentication. This parameter is mandatory for all API calls to identify and authenticate the shop making the request."
-          },
-          {
             "name": "app_key",
             "in": "query",
             "required": true,
@@ -43715,15 +43670,6 @@
               "type": "string"
             },
             "description": "Content type of the request"
-          },
-          {
-            "name": "shop_cipher",
-            "in": "query",
-            "required": true,
-            "schema": {
-              "type": "string"
-            },
-            "description": "Encrypted shop identifier required for TikTok Shop API authentication. This parameter is mandatory for all API calls to identify and authenticate the shop making the request."
           },
           {
             "name": "app_key",
@@ -43845,15 +43791,6 @@
               "type": "string"
             },
             "description": "Content type of the request"
-          },
-          {
-            "name": "shop_cipher",
-            "in": "query",
-            "required": true,
-            "schema": {
-              "type": "string"
-            },
-            "description": "Encrypted shop identifier required for TikTok Shop API authentication. This parameter is mandatory for all API calls to identify and authenticate the shop making the request."
           },
           {
             "name": "app_key",
@@ -43982,15 +43919,6 @@
             "schema": {
               "type": "string"
             }
-          },
-          {
-            "name": "shop_cipher",
-            "in": "query",
-            "required": true,
-            "schema": {
-              "type": "string"
-            },
-            "description": "Encrypted shop identifier required for TikTok Shop API authentication. This parameter is mandatory for all API calls to identify and authenticate the shop making the request."
           },
           {
             "name": "app_key",
@@ -44123,15 +44051,6 @@
             "description": "Content type of the request"
           },
           {
-            "name": "shop_cipher",
-            "in": "query",
-            "required": true,
-            "schema": {
-              "type": "string"
-            },
-            "description": "Encrypted shop identifier required for TikTok Shop API authentication. This parameter is mandatory for all API calls to identify and authenticate the shop making the request."
-          },
-          {
             "name": "app_key",
             "in": "query",
             "required": true,
@@ -44260,15 +44179,6 @@
               "type": "string"
             },
             "description": "Content type of the request"
-          },
-          {
-            "name": "shop_cipher",
-            "in": "query",
-            "required": true,
-            "schema": {
-              "type": "string"
-            },
-            "description": "Encrypted shop identifier required for TikTok Shop API authentication. This parameter is mandatory for all API calls to identify and authenticate the shop making the request."
           },
           {
             "name": "app_key",
@@ -44409,15 +44319,6 @@
             "description": "Content type of the request"
           },
           {
-            "name": "shop_cipher",
-            "in": "query",
-            "required": true,
-            "schema": {
-              "type": "string"
-            },
-            "description": "Encrypted shop identifier required for TikTok Shop API authentication. This parameter is mandatory for all API calls to identify and authenticate the shop making the request."
-          },
-          {
             "name": "app_key",
             "in": "query",
             "required": true,
@@ -44546,15 +44447,6 @@
             }
           },
           {
-            "name": "shop_cipher",
-            "in": "query",
-            "required": true,
-            "schema": {
-              "type": "string"
-            },
-            "description": "Encrypted shop identifier required for TikTok Shop API authentication. This parameter is mandatory for all API calls to identify and authenticate the shop making the request."
-          },
-          {
             "name": "app_key",
             "in": "query",
             "required": true,
@@ -44674,15 +44566,6 @@
               "type": "string"
             },
             "description": "Content type of the request"
-          },
-          {
-            "name": "shop_cipher",
-            "in": "query",
-            "required": true,
-            "schema": {
-              "type": "string"
-            },
-            "description": "Encrypted shop identifier required for TikTok Shop API authentication. This parameter is mandatory for all API calls to identify and authenticate the shop making the request."
           },
           {
             "name": "app_key",
@@ -44824,15 +44707,6 @@
             "description": "Content type of the request"
           },
           {
-            "name": "shop_cipher",
-            "in": "query",
-            "required": true,
-            "schema": {
-              "type": "string"
-            },
-            "description": "Encrypted shop identifier required for TikTok Shop API authentication. This parameter is mandatory for all API calls to identify and authenticate the shop making the request."
-          },
-          {
             "name": "app_key",
             "in": "query",
             "required": true,
@@ -44933,15 +44807,6 @@
               "type": "string"
             },
             "description": "Content type of the request"
-          },
-          {
-            "name": "shop_cipher",
-            "in": "query",
-            "required": true,
-            "schema": {
-              "type": "string"
-            },
-            "description": "Encrypted shop identifier required for TikTok Shop API authentication. This parameter is mandatory for all API calls to identify and authenticate the shop making the request."
           },
           {
             "name": "app_key",
@@ -45061,15 +44926,6 @@
             "schema": {
               "type": "number"
             }
-          },
-          {
-            "name": "shop_cipher",
-            "in": "query",
-            "required": true,
-            "schema": {
-              "type": "string"
-            },
-            "description": "Encrypted shop identifier required for TikTok Shop API authentication. This parameter is mandatory for all API calls to identify and authenticate the shop making the request."
           },
           {
             "name": "app_key",
@@ -45210,15 +45066,6 @@
             "description": "Content type of the request"
           },
           {
-            "name": "shop_cipher",
-            "in": "query",
-            "required": true,
-            "schema": {
-              "type": "string"
-            },
-            "description": "Encrypted shop identifier required for TikTok Shop API authentication. This parameter is mandatory for all API calls to identify and authenticate the shop making the request."
-          },
-          {
             "name": "app_key",
             "in": "query",
             "required": true,
@@ -45336,15 +45183,6 @@
               "type": "string"
             },
             "description": "Content type of the request"
-          },
-          {
-            "name": "shop_cipher",
-            "in": "query",
-            "required": true,
-            "schema": {
-              "type": "string"
-            },
-            "description": "Encrypted shop identifier required for TikTok Shop API authentication. This parameter is mandatory for all API calls to identify and authenticate the shop making the request."
           },
           {
             "name": "app_key",
@@ -45526,15 +45364,6 @@
             "description": "categoryId? identifier"
           },
           {
-            "name": "shop_cipher",
-            "in": "query",
-            "required": true,
-            "schema": {
-              "type": "string"
-            },
-            "description": "Encrypted shop identifier required for TikTok Shop API authentication. This parameter is mandatory for all API calls to identify and authenticate the shop making the request."
-          },
-          {
             "name": "app_key",
             "in": "query",
             "required": true,
@@ -45670,15 +45499,6 @@
               "type": "string"
             },
             "description": "Content type of the request"
-          },
-          {
-            "name": "shop_cipher",
-            "in": "query",
-            "required": true,
-            "schema": {
-              "type": "string"
-            },
-            "description": "Encrypted shop identifier required for TikTok Shop API authentication. This parameter is mandatory for all API calls to identify and authenticate the shop making the request."
           },
           {
             "name": "app_key",
@@ -45837,15 +45657,6 @@
             "description": "Content type of the request"
           },
           {
-            "name": "shop_cipher",
-            "in": "query",
-            "required": true,
-            "schema": {
-              "type": "string"
-            },
-            "description": "Encrypted shop identifier required for TikTok Shop API authentication. This parameter is mandatory for all API calls to identify and authenticate the shop making the request."
-          },
-          {
             "name": "app_key",
             "in": "query",
             "required": true,
@@ -45993,15 +45804,6 @@
             "description": "Content type of the request"
           },
           {
-            "name": "shop_cipher",
-            "in": "query",
-            "required": true,
-            "schema": {
-              "type": "string"
-            },
-            "description": "Encrypted shop identifier required for TikTok Shop API authentication. This parameter is mandatory for all API calls to identify and authenticate the shop making the request."
-          },
-          {
             "name": "app_key",
             "in": "query",
             "required": true,
@@ -46144,15 +45946,6 @@
             }
           },
           {
-            "name": "shop_cipher",
-            "in": "query",
-            "required": true,
-            "schema": {
-              "type": "string"
-            },
-            "description": "Encrypted shop identifier required for TikTok Shop API authentication. This parameter is mandatory for all API calls to identify and authenticate the shop making the request."
-          },
-          {
             "name": "app_key",
             "in": "query",
             "required": true,
@@ -46268,15 +46061,6 @@
               "type": "string"
             },
             "description": "Content type of the request"
-          },
-          {
-            "name": "shop_cipher",
-            "in": "query",
-            "required": true,
-            "schema": {
-              "type": "string"
-            },
-            "description": "Encrypted shop identifier required for TikTok Shop API authentication. This parameter is mandatory for all API calls to identify and authenticate the shop making the request."
           },
           {
             "name": "app_key",
@@ -46405,15 +46189,6 @@
               "type": "string"
             },
             "description": "Content type of the request"
-          },
-          {
-            "name": "shop_cipher",
-            "in": "query",
-            "required": true,
-            "schema": {
-              "type": "string"
-            },
-            "description": "Encrypted shop identifier required for TikTok Shop API authentication. This parameter is mandatory for all API calls to identify and authenticate the shop making the request."
           },
           {
             "name": "app_key",
@@ -46551,15 +46326,6 @@
             "schema": {
               "type": "number"
             }
-          },
-          {
-            "name": "shop_cipher",
-            "in": "query",
-            "required": true,
-            "schema": {
-              "type": "string"
-            },
-            "description": "Encrypted shop identifier required for TikTok Shop API authentication. This parameter is mandatory for all API calls to identify and authenticate the shop making the request."
           },
           {
             "name": "app_key",
@@ -46716,15 +46482,6 @@
             }
           },
           {
-            "name": "shop_cipher",
-            "in": "query",
-            "required": true,
-            "schema": {
-              "type": "string"
-            },
-            "description": "Encrypted shop identifier required for TikTok Shop API authentication. This parameter is mandatory for all API calls to identify and authenticate the shop making the request."
-          },
-          {
             "name": "app_key",
             "in": "query",
             "required": true,
@@ -46872,15 +46629,6 @@
             "description": "Content type of the request"
           },
           {
-            "name": "shop_cipher",
-            "in": "query",
-            "required": true,
-            "schema": {
-              "type": "string"
-            },
-            "description": "Encrypted shop identifier required for TikTok Shop API authentication. This parameter is mandatory for all API calls to identify and authenticate the shop making the request."
-          },
-          {
             "name": "app_key",
             "in": "query",
             "required": true,
@@ -47026,15 +46774,6 @@
             }
           },
           {
-            "name": "shop_cipher",
-            "in": "query",
-            "required": true,
-            "schema": {
-              "type": "string"
-            },
-            "description": "Encrypted shop identifier required for TikTok Shop API authentication. This parameter is mandatory for all API calls to identify and authenticate the shop making the request."
-          },
-          {
             "name": "app_key",
             "in": "query",
             "required": true,
@@ -47161,15 +46900,6 @@
             "schema": {
               "type": "string"
             }
-          },
-          {
-            "name": "shop_cipher",
-            "in": "query",
-            "required": true,
-            "schema": {
-              "type": "string"
-            },
-            "description": "Encrypted shop identifier required for TikTok Shop API authentication. This parameter is mandatory for all API calls to identify and authenticate the shop making the request."
           },
           {
             "name": "app_key",
@@ -52231,15 +51961,6 @@
             "description": "Content type of the request"
           },
           {
-            "name": "shop_cipher",
-            "in": "query",
-            "required": true,
-            "schema": {
-              "type": "string"
-            },
-            "description": "Encrypted shop identifier required for TikTok Shop API authentication. This parameter is mandatory for all API calls to identify and authenticate the shop making the request."
-          },
-          {
             "name": "app_key",
             "in": "query",
             "required": true,
@@ -52340,15 +52061,6 @@
               "type": "string"
             },
             "description": "Content type of the request"
-          },
-          {
-            "name": "shop_cipher",
-            "in": "query",
-            "required": true,
-            "schema": {
-              "type": "string"
-            },
-            "description": "Encrypted shop identifier required for TikTok Shop API authentication. This parameter is mandatory for all API calls to identify and authenticate the shop making the request."
           },
           {
             "name": "app_key",
@@ -52485,15 +52197,6 @@
             }
           },
           {
-            "name": "shop_cipher",
-            "in": "query",
-            "required": true,
-            "schema": {
-              "type": "string"
-            },
-            "description": "Encrypted shop identifier required for TikTok Shop API authentication. This parameter is mandatory for all API calls to identify and authenticate the shop making the request."
-          },
-          {
             "name": "app_key",
             "in": "query",
             "required": true,
@@ -52603,15 +52306,6 @@
               "type": "string"
             },
             "description": "Content type of the request"
-          },
-          {
-            "name": "shop_cipher",
-            "in": "query",
-            "required": true,
-            "schema": {
-              "type": "string"
-            },
-            "description": "Encrypted shop identifier required for TikTok Shop API authentication. This parameter is mandatory for all API calls to identify and authenticate the shop making the request."
           },
           {
             "name": "app_key",
@@ -52757,15 +52451,6 @@
             }
           },
           {
-            "name": "shop_cipher",
-            "in": "query",
-            "required": true,
-            "schema": {
-              "type": "string"
-            },
-            "description": "Encrypted shop identifier required for TikTok Shop API authentication. This parameter is mandatory for all API calls to identify and authenticate the shop making the request."
-          },
-          {
             "name": "app_key",
             "in": "query",
             "required": true,
@@ -52873,15 +52558,6 @@
               "type": "string"
             },
             "description": "Content type of the request"
-          },
-          {
-            "name": "shop_cipher",
-            "in": "query",
-            "required": true,
-            "schema": {
-              "type": "string"
-            },
-            "description": "Encrypted shop identifier required for TikTok Shop API authentication. This parameter is mandatory for all API calls to identify and authenticate the shop making the request."
           },
           {
             "name": "app_key",
@@ -53014,15 +52690,6 @@
             "description": "Content type of the request"
           },
           {
-            "name": "shop_cipher",
-            "in": "query",
-            "required": true,
-            "schema": {
-              "type": "string"
-            },
-            "description": "Encrypted shop identifier required for TikTok Shop API authentication. This parameter is mandatory for all API calls to identify and authenticate the shop making the request."
-          },
-          {
             "name": "app_key",
             "in": "query",
             "required": true,
@@ -53153,15 +52820,6 @@
             "description": "Content type of the request"
           },
           {
-            "name": "shop_cipher",
-            "in": "query",
-            "required": true,
-            "schema": {
-              "type": "string"
-            },
-            "description": "Encrypted shop identifier required for TikTok Shop API authentication. This parameter is mandatory for all API calls to identify and authenticate the shop making the request."
-          },
-          {
             "name": "app_key",
             "in": "query",
             "required": true,
@@ -53272,15 +52930,6 @@
               "type": "string"
             },
             "description": "Content type of the request"
-          },
-          {
-            "name": "shop_cipher",
-            "in": "query",
-            "required": true,
-            "schema": {
-              "type": "string"
-            },
-            "description": "Encrypted shop identifier required for TikTok Shop API authentication. This parameter is mandatory for all API calls to identify and authenticate the shop making the request."
           },
           {
             "name": "app_key",
@@ -70986,15 +70635,6 @@
               "type": "string"
             },
             "description": "Content type of the request"
-          },
-          {
-            "name": "shop_cipher",
-            "in": "query",
-            "required": true,
-            "schema": {
-              "type": "string"
-            },
-            "description": "Encrypted shop identifier required for TikTok Shop API authentication. This parameter is mandatory for all API calls to identify and authenticate the shop making the request."
           },
           {
             "name": "app_key",

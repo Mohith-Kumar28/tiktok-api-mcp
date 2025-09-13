@@ -450,7 +450,7 @@ function parseApiFile(filePath) {
             const parameter = {
               name: actualParamName,
               in: paramIn,
-              required: paramIn === 'path' || !isOptional || paramName === 'xTtsAccessToken' || actualParamName === 'x-tts-access-token', // Path parameters and auth tokens are always required
+              required: paramIn === 'path' || !isOptional || paramName === 'xTtsAccessToken' || actualParamName === 'x-tts-access-token',
               schema: convertTypeScriptType(paramType)
             };
             
@@ -554,9 +554,21 @@ function parseApiFile(filePath) {
     // Determine if this endpoint needs shop authentication parameters
     const isAuthorizationEndpoint = apiPath.includes('/authorization/');
     const isSellerEndpoint = apiPath.includes('/seller/') && !apiPath.includes('/affiliate_seller/');
+    const isAffiliateEndpoint = apiPath.includes('/affiliate/');
+    const isCreatorEndpoint = apiPath.includes('/affiliate_creator/');
+    const isPartnerEndpoint = apiPath.includes('/affiliate_partner/');
+    const isAccountLevelEndpoint = apiPath.includes('/seller/') && (apiPath.includes('/shops') || methodName.toLowerCase().includes('shops'));
+    
+    // Endpoints that should NOT have shop cipher:
+    // 1. Authorization endpoints (use different auth)
+    // 2. Affiliate endpoints (creator/partner focused, not shop-focused)
+    // 3. Creator-specific endpoints (creator-focused, not shop-focused)
+    // 4. Partner endpoints (partner-level operations)
+    // 5. Account-level endpoints that list shops (don't need specific shop context)
+    const shouldNotHaveShopCipher = isAuthorizationEndpoint || isAffiliateEndpoint || isCreatorEndpoint || isPartnerEndpoint || isAccountLevelEndpoint;
     
     // Get common parameters based on endpoint type
-    const commonParameters = isAuthorizationEndpoint ? getTikTokAuthorizationParameters() : getTikTokShopCommonParameters();
+    const commonParameters = shouldNotHaveShopCipher ? getTikTokAuthorizationParameters() : getTikTokShopCommonParameters();
     
     // Create parameter map for deduplication
     const parameterMap = new Map();
