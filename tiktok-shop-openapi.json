@@ -53393,6 +53393,34 @@
               "type": "string"
             },
             "description": "Content type of the request"
+          },
+          {
+            "name": "app_key",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "description": "Application key provided by TikTok Shop for API authentication"
+          },
+          {
+            "name": "sign",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "description": "Request signature for API authentication and integrity verification"
+          },
+          {
+            "name": "timestamp",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            },
+            "description": "Unix timestamp when the request was made, used for API authentication"
           }
         ]
       }
@@ -53476,6 +53504,34 @@
               "type": "number"
             },
             "description": "shopId? identifier"
+          },
+          {
+            "name": "app_key",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "description": "Application key provided by TikTok Shop for API authentication"
+          },
+          {
+            "name": "sign",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "description": "Request signature for API authentication and integrity verification"
+          },
+          {
+            "name": "timestamp",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            },
+            "description": "Unix timestamp when the request was made, used for API authentication"
           }
         ]
       }
@@ -53559,6 +53615,34 @@
               "type": "number"
             },
             "description": "shopId? identifier"
+          },
+          {
+            "name": "app_key",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "description": "Application key provided by TikTok Shop for API authentication"
+          },
+          {
+            "name": "sign",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "description": "Request signature for API authentication and integrity verification"
+          },
+          {
+            "name": "timestamp",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            },
+            "description": "Unix timestamp when the request was made, used for API authentication"
           }
         ]
       }
@@ -53642,6 +53726,34 @@
               "type": "string"
             },
             "description": "Content type of the request"
+          },
+          {
+            "name": "app_key",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "description": "Application key provided by TikTok Shop for API authentication"
+          },
+          {
+            "name": "sign",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "description": "Request signature for API authentication and integrity verification"
+          },
+          {
+            "name": "timestamp",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            },
+            "description": "Unix timestamp when the request was made, used for API authentication"
           }
         ]
       }
@@ -53716,6 +53828,34 @@
               "type": "string"
             },
             "description": "Content type of the request"
+          },
+          {
+            "name": "app_key",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "description": "Application key provided by TikTok Shop for API authentication"
+          },
+          {
+            "name": "sign",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "description": "Request signature for API authentication and integrity verification"
+          },
+          {
+            "name": "timestamp",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            },
+            "description": "Unix timestamp when the request was made, used for API authentication"
           }
         ]
       }

@@ -59,7 +59,41 @@ const openApiSpec = {
   paths: {}
 };
 
-// Function to get TikTok Shop API common required parameters
+// Function to get TikTok Shop API common required parameters for authorization endpoints
+function getTikTokAuthorizationParameters() {
+  return [
+    {
+      name: 'app_key',
+      in: 'query',
+      required: true,
+      schema: {
+        type: 'string'
+      },
+      description: 'Application key provided by TikTok Shop for API authentication'
+    },
+    {
+      name: 'sign',
+      in: 'query',
+      required: true,
+      schema: {
+        type: 'string'
+      },
+      description: 'Request signature for API authentication and integrity verification'
+    },
+    {
+      name: 'timestamp',
+      in: 'query',
+      required: true,
+      schema: {
+        type: 'integer',
+        format: 'int64'
+      },
+      description: 'Unix timestamp when the request was made, used for API authentication'
+    }
+  ];
+}
+
+// Function to get TikTok Shop API common required parameters for shop endpoints
 function getTikTokShopCommonParameters() {
   return [
     {
@@ -522,7 +556,7 @@ function parseApiFile(filePath) {
     const isSellerEndpoint = apiPath.includes('/seller/') && !apiPath.includes('/affiliate_seller/');
     
     // Get common parameters based on endpoint type
-    const commonParameters = isAuthorizationEndpoint ? [] : getTikTokShopCommonParameters();
+    const commonParameters = isAuthorizationEndpoint ? getTikTokAuthorizationParameters() : getTikTokShopCommonParameters();
     
     // Create parameter map for deduplication
     const parameterMap = new Map();
@@ -541,24 +575,22 @@ function parseApiFile(filePath) {
       parameterMap.set(baseKey, param);
     });
     
-    // Add common parameters only for non-authorization endpoints (avoiding duplicates and updating existing ones)
-    if (!isAuthorizationEndpoint) {
-      commonParameters.forEach(commonParam => {
-        const baseName = getBaseParameterName(commonParam.name);
-        const baseKey = `${baseName}_${commonParam.in}`;
-        if (parameterMap.has(baseKey)) {
-          const existing = parameterMap.get(baseKey);
-          // Update existing parameter to be required and add description if missing
-          existing.required = true;
-          if (!existing.description && commonParam.description) {
-            existing.description = commonParam.description;
-          }
-          parameterMap.set(baseKey, existing);
-        } else {
-          parameterMap.set(baseKey, commonParam);
+    // Add common parameters for all endpoints (avoiding duplicates and updating existing ones)
+    commonParameters.forEach(commonParam => {
+      const baseName = getBaseParameterName(commonParam.name);
+      const baseKey = `${baseName}_${commonParam.in}`;
+      if (parameterMap.has(baseKey)) {
+        const existing = parameterMap.get(baseKey);
+        // Update existing parameter to be required and add description if missing
+        existing.required = true;
+        if (!existing.description && commonParam.description) {
+          existing.description = commonParam.description;
         }
-      });
-    }
+        parameterMap.set(baseKey, existing);
+      } else {
+        parameterMap.set(baseKey, commonParam);
+      }
+    });
     
     // Add pagination parameters for endpoints that need them
     // Check if endpoint has page_size or is a known paginated endpoint
