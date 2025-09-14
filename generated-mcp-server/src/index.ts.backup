@@ -2178,55 +2178,23 @@ const securitySchemes =   {
 
 
 server.setRequestHandler(ListToolsRequestSchema, async () => {
-  const toolsForClient: Tool[] = [
-    {
-      name: "list_apis",
-      description: "List all available TikTok Shop API endpoints with their descriptions and required parameters",
-      inputSchema: {
-        type: "object",
-        properties: {
-          filter: {
-            type: "string",
-            description: "Optional filter to search for specific API endpoints by name or description"
-          }
-        }
-      }
-    },
-    {
-      name: "call_api",
-      description: "Make an API call to a specific TikTok Shop endpoint with dynamic parameters",
-      inputSchema: {
-        type: "object",
-        properties: {
-          endpoint_name: {
-            type: "string",
-            description: "The name of the API endpoint to call (use list_apis to see available endpoints)"
-          },
-          parameters: {
-            type: "object",
-            description: "Dynamic parameters required for the specific API endpoint",
-            additionalProperties: true
-          }
-        },
-        required: ["endpoint_name"]
-      }
-    }
-  ];
+  const toolsForClient: Tool[] = Array.from(toolDefinitionMap.values()).map(def => ({
+    name: def.name,
+    description: def.description,
+    inputSchema: def.inputSchema
+  }));
   return { tools: toolsForClient };
 });
 
 
 server.setRequestHandler(CallToolRequestSchema, async (request: CallToolRequest): Promise<CallToolResult> => {
   const { name: toolName, arguments: toolArgs } = request.params;
-  
-  if (toolName === "list_apis") {
-    return await handleListApisCall(toolArgs ?? {});
-  } else if (toolName === "call_api") {
-    return await handleCallApiCall(toolArgs ?? {});
-  } else {
+  const toolDefinition = toolDefinitionMap.get(toolName);
+  if (!toolDefinition) {
     console.error(`Error: Unknown tool requested: ${toolName}`);
-    return { content: [{ type: "text", text: `Error: Unknown tool requested: ${toolName}. Available tools: list_apis, call_api` }] };
+    return { content: [{ type: "text", text: `Error: Unknown tool requested: ${toolName}` }] };
   }
+  return await executeApiTool(toolName, toolDefinition, toolArgs ?? {}, securitySchemes);
 });
 
 
@@ -2339,112 +2307,6 @@ async function acquireOAuth2Token(schemeName: string, scheme: any): Promise<stri
     }
 }
 
-
-/**
- * Handles the list_apis tool call
- * 
- * @param toolArgs Arguments provided by the user
- * @returns Call tool result with list of available APIs
- */
-async function handleListApisCall(toolArgs: JsonObject): Promise<CallToolResult> {
-  try {
-    const filter = toolArgs.filter as string | undefined;
-    
-    // Get all API definitions from toolDefinitionMap
-    const allApis = Array.from(toolDefinitionMap.values());
-    
-    // Apply filter if provided
-    const filteredApis = filter 
-      ? allApis.filter(api => 
-          api.name.toLowerCase().includes(filter.toLowerCase()) ||
-          api.description.toLowerCase().includes(filter.toLowerCase())
-        )
-      : allApis;
-    
-    // Format the API list for display
-    const apiList = filteredApis.map(api => ({
-      name: api.name,
-      description: api.description,
-      method: api.method.toUpperCase(),
-      path: api.pathTemplate,
-      required_parameters: api.executionParameters
-        .filter(param => api.inputSchema.required?.includes(param.name))
-        .map(param => `${param.name} (${param.in})`),
-      optional_parameters: api.executionParameters
-        .filter(param => !api.inputSchema.required?.includes(param.name))
-        .map(param => `${param.name} (${param.in})`)
-    }));
-    
-    const responseText = `Available TikTok Shop API Endpoints (${apiList.length} total):\n\n` +
-      apiList.map((api, index) => 
-        `${index + 1}. **${api.name}**\n` +
-        `   Method: ${api.method}\n` +
-        `   Path: ${api.path}\n` +
-        `   Description: ${api.description}\n` +
-        `   Required Parameters: ${api.required_parameters.length > 0 ? api.required_parameters.join(', ') : 'None'}\n` +
-        `   Optional Parameters: ${api.optional_parameters.length > 0 ? api.optional_parameters.join(', ') : 'None'}\n`
-      ).join('\n');
-    
-    return {
-      content: [{
-        type: "text",
-        text: responseText
-      }]
-    };
-  } catch (error: unknown) {
-    const errorMessage = error instanceof Error ? error.message : String(error);
-    return {
-      content: [{
-        type: "text",
-        text: `Error listing APIs: ${errorMessage}`
-      }]
-    };
-  }
-}
-
-/**
- * Handles the call_api tool call
- * 
- * @param toolArgs Arguments provided by the user
- * @returns Call tool result from the API call
- */
-async function handleCallApiCall(toolArgs: JsonObject): Promise<CallToolResult> {
-  try {
-    const endpointName = toolArgs.endpoint_name as string;
-    const parameters = toolArgs.parameters as JsonObject || {};
-    
-    if (!endpointName) {
-      return {
-        content: [{
-          type: "text",
-          text: "Error: endpoint_name is required. Use list_apis to see available endpoints."
-        }]
-      };
-    }
-    
-    // Find the tool definition
-    const toolDefinition = toolDefinitionMap.get(endpointName);
-    if (!toolDefinition) {
-      return {
-        content: [{
-          type: "text",
-          text: `Error: Unknown endpoint '${endpointName}'. Use list_apis to see available endpoints.`
-        }]
-      };
-    }
-    
-    // Execute the API call using the existing executeApiTool function
-    return await executeApiTool(endpointName, toolDefinition, parameters, securitySchemes);
-  } catch (error: unknown) {
-    const errorMessage = error instanceof Error ? error.message : String(error);
-    return {
-      content: [{
-        type: "text",
-        text: `Error calling API: ${errorMessage}`
-      }]
-    };
-  }
-}
 
 /**
  * Executes an API tool with the provided arguments
@@ -2681,20 +2543,14 @@ async function executeApiTool(
     // Add required TikTok Shop API parameters
     queryParams.app_key = appKey;
     queryParams.access_token = accessToken;
-    queryParams.timestamp = Math.floor(Date.now() / 1000); // Keep as number for tool schema
-    
-    // Create a copy with string timestamp for signature generation
-    const signatureParams = {
-      ...queryParams,
-      timestamp: queryParams.timestamp.toString()
-    };
+    queryParams.timestamp = Math.floor(Date.now() / 1000).toString();
     
     // Generate signature
     const signature = generateSign({
       path: urlPath,
       method: definition.method.toUpperCase(),
       appSecret: appSecret,
-      queryParams: signatureParams,
+      queryParams: queryParams,
       body: requestBodyData
     });
     
